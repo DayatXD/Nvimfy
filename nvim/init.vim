@@ -1,53 +1,74 @@
-"      ___   _____
+   "   ___   _____
 "     /   | / ___/       ○ Sumit Burman
-"    / /| | \__ \        ● @ayesumit
+"    / /| | \__ \        ● @ayesumit/spacey
 "   / ___ |___/ /        □ Nvim Configs
 "  /_/  |_/____/         ■ For Web....
 "
 "____________________________________
+
+
 " Auto Insall
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent execute "!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+"Color Schemes
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'ghifarit53/tokyonight-vim'
 
+"Other Colors
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'luochen1990/rainbow'
 
-Plug 'tpope/vim-sleuth'
-Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
+"Plug 'glepnir/dashboard-nvim'
+Plug 'mhinz/vim-startify'
+
+"Editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
+Plug 'godlygeek/tabular'
+Plug 'ntpeters/vim-better-whitespace'
 
+"Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
-Plug 'mhinz/vim-startify'
+"Utility
 Plug '907th/vim-auto-save'
 Plug 'mcchrish/nnn.vim'
-Plug 'skywind3000/quickmenu.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-signify'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'skywind3000/quickmenu.vim'
 
+"pairs and indent
+Plug 'tpope/vim-sleuth'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+
+"Snippets and Completion
 Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'junegunn/vim-peekaboo'
+Plug 'jbyuki/instant.nvim'
+
+
 call plug#end()
+
+let g:instant_username = "spacey"
 
 
 syntax enable
@@ -62,15 +83,15 @@ set number
 set cursorline
 set ruler
 set mouse=a
-set scrolloff=8
+"set scrolloff=8
 set nowrap
 set lazyredraw
+
 " Cmd
 set noshowmode
 set noerrorbells
 set cmdheight=1
 set wildmenu
-set showmatch
 set laststatus=2
 set completeopt=menuone,longest
 set pumheight=4
@@ -80,6 +101,7 @@ set shortmess+=c
 set splitbelow splitright
 
 " Search
+set showmatch
 set incsearch
 set nohlsearch
 set smartcase
@@ -103,19 +125,21 @@ set foldlevelstart=99
 set formatoptions-=cro
 set updatetime=300
 set autochdir
+
+"Backups
 set nobackup
 set nowritebackup
 "set backupdir=~/.config/nvim/backups
-set directory=~/.config/nvim/swaps
+"set directory=~/.config/nvim/swaps
 set undofile
-set undodir=~/.config/nvim/.tmp
+"set undodir=~/.config/nvim/.tmp
 
 " Remaps
 "Basics
 let mapleader=","
 
 "au! BufWritePost $MYVIMRC source %
-nnoremap <silent> cc  :source $MYVIMRC<cr>
+nnoremap <silent> ,z  :source $MYVIMRC<cr>
 nnoremap <silent> <Leader>v :e $MYVIMRC<cr>
 
 inoremap .. <Esc>
@@ -129,12 +153,6 @@ noremap <silent> <C-Up> :res +2<CR>
 noremap <silent> <C-Down> :res -2<CR>
 noremap <silent> <C-Left> :vert res +2<CR>
 noremap <silent> <C-Right> :vert res -2<CR>
-
-" nnoremap <C-Up> :m .-2<CR>==
-" nnoremap <C-Down> :m .+1<CR>==
-" vnoremap <C-Up> :m '<-2<CR>gv=gv
-" vnoremap <C-Down> :m '>+1<CR>gv=gv
-
 
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>[ :bp<CR>
@@ -162,7 +180,7 @@ autocmd VimResized * wincmd =
 
 " Plugin Config zone
 let g:lightline = {
-\   'colorscheme': 'one',
+\   'colorscheme': 'nord',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'modified' ]],
@@ -183,29 +201,16 @@ let g:lightline = {
 \ },
 \}
 
+let g:rainbow_active = 1
+
 let g:startify_custom_header = [
         \ '   _  __     _         __  ___         __  ',
         \ '  / |/ /  __(_)_ _    /  |/  /__ _____/ /  ',
         \ ' /    / |/ / /  ` \  / /|_/ / _ `/ __/ _ \ ',
         \ '/_/|_/|___/_/_/_/_/ /_/  /_/\_,_/\__/_//_/ ',
         \]
-
-
-let g:rainbow_active = 1
-
-let g:closetag_filenames = '*.html'
-let g:closetag_shortcut = '>'
-
-let g:move_key_modifier = 'C'
-
-let g:user_emmet_leader_key=','
-nnoremap <Leader> ,,<CR>
-nnoremap <Space> ,,<CR>
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
 let g:startify_lists = [
-        \ { 'type': 'files',     'header': ['   MRU']            },
+        \ { 'type': 'files',     'header': ['   Recents']            },
         \ { 'type': 'sessions',  'header': ['   Sessions']       },
         \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
         \ { 'type': 'commands',  'header': ['   Commands']       },
@@ -216,10 +221,32 @@ let g:startify_bookmarks = [
             \ { 'z': '~/.zshrc' },
             \ '~/storage/shared/',
             \ ]
-let g:startify_session_dir = '~/.config/nvim/sessions'
-let g:startify_session_autoload = 0
-let g:startify_session_delete_buffers = 1
-let g:startify_enable_special = 0
+"let g:startify_session_dir = '~/.config/nvim/sessions'
+"let g:startify_session_autoload = 0
+"let g:startify_session_delete_buffers = 1
+"let g:startify_enable_special = 0
+
+let g:closetag_filenames = '*.html'
+let g:closetag_shortcut = '>'
+
+let g:move_key_modifier = 'C'
+
+let g:indentLine_enabled = 0
+nnoremap <Leader>l :IndentBlanklineToggle<CR>
+let g:indentLine_char = '|'
+let g:indentLine_setColors = 0
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_filetype_exclude = ['help', 'startify']
+
+let g:better_whitespace_guicolor='<desired_color>'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
+let g:user_emmet_leader_key=','
+nnoremap <Leader> ,,<CR>
+nnoremap <Space> ,,<CR>
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 let g:auto_save = 1
 let g:auto_save_silent = 1
@@ -231,18 +258,13 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 let g:nnn#session = 'global'
 
 let g:coc_global_extensions = ['coc-html','coc-css','coc-tsserver','coc-json','coc-sh','coc-htmlhint','coc-highlight','coc-html-css-support']
-" coc-html-css-support coc-highlight
 
 
-
-
-" clear all the items
 call quickmenu#reset()
 
 " enable cursorline (L) and cmdline help (H)
 let g:quickmenu_options = "HL"
 
-" use your favorite key to show / hide quickmenu
 noremap <silent><F12> :call quickmenu#toggle(0)
 
 
@@ -252,23 +274,14 @@ call quickmenu#append("# Debug", '')
 " script between %{ and } will be evaluated before menu open
 call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
 
-
-" new section
 call quickmenu#append("# Git", '')
-
-" use fugitive to show diff
 call quickmenu#append("git diff", 'Gvdiff', "use fugitive's Gvdiff on current document")
-
+call quickmenu#append("git add", 'Gvdiff', "use fugitive's Gvdiff on current document")
+call quickmenu#append("git commit", 'Gvdiff', "use fugitive's Gvdiff on current document")
 call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
 
-
-" new section
 call quickmenu#append("# Misc", '')
-
 call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
-
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 
 call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
-
-
