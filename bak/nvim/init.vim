@@ -1,9 +1,9 @@
-"●     ___   _____ ●
-"     /   | / ___/     ○ Sumit Burman
-"    / /| | \__ \      ● @ayesumit/spacey 
-"   / ___ |___/ /      □ Nvim Configs 
-"  /_/  |_/____/       ■ For Web....
-"●                 ●        
+   "   ___   _____
+"     /   | / ___/       ○ Sumit Burman
+"    / /| | \__ \        ● @ayesumit/spacey
+"   / ___ |___/ /        □ Nvim Configs
+"  /_/  |_/____/         ■ For Web....
+"
 "____________________________________
 
 
@@ -36,6 +36,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'
+Plug 'ntpeters/vim-better-whitespace'
 
 "Syntax
 Plug 'othree/html5.vim'
@@ -49,8 +50,6 @@ Plug 'mcchrish/nnn.vim'
 Plug 'mhinz/vim-signify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skywind3000/quickmenu.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'jbyuki/instant.nvim'
 
 "pairs and indent
 Plug 'tpope/vim-sleuth'
@@ -63,12 +62,17 @@ Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'junegunn/vim-peekaboo'
+Plug 'jbyuki/instant.nvim'
+
 
 call plug#end()
 
 let g:instant_username = "spacey"
 
+
 syntax enable
+
 set termguicolors
 set background=dark
 colorscheme tokyonight
@@ -76,7 +80,6 @@ colorscheme tokyonight
 
 filetype on
 set number
-"set relativenumber
 set cursorline
 set ruler
 set mouse=a
@@ -120,7 +123,7 @@ set foldlevelstart=99
 
 " Misc
 set formatoptions-=cro
-set updatetime=250
+set updatetime=300
 set autochdir
 
 "Backups
@@ -144,12 +147,27 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-q> :wq!<CR>
 nnoremap qq :q!<CR>
 
-nnoremap <Space><Space> za<CR>
+nnoremap <Space> za
 
 noremap <silent> <C-Up> :res +2<CR>
 noremap <silent> <C-Down> :res -2<CR>
 noremap <silent> <C-Left> :vert res +2<CR>
 noremap <silent> <C-Right> :vert res -2<CR>
+
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>[ :bp<CR>
+nnoremap <Leader>] :bn<CR>
+nnoremap <Leader>= :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
 
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
@@ -157,11 +175,12 @@ inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
 inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 
+" Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =
 
 " Plugin Config zone
 let g:lightline = {
-\   'colorscheme': 'onedark',
+\   'colorscheme': 'nord',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'modified' ]],
@@ -182,17 +201,16 @@ let g:lightline = {
 \ },
 \}
 
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 
 let g:startify_custom_header = [
-        \ '●     ___   _____ ●   __  ___         __ ',
-        \ '     /   | / ___/    /  |/  /__ _____/ / ',
-        \ '    / /| | \__ \    / /|_/ / _ `/ __/ _ \',
-        \ '   / ___ |___/ /   /_/  /_/\_,_/\__/_//_/',
-        \ '  /_/  |_/____/         ',
-        \ '●                 ●     version: 1.6     ',
+        \ '   _  __     _         __  ___         __  ',
+        \ '  / |/ /  __(_)_ _    /  |/  /__ _____/ /  ',
+        \ ' /    / |/ / /  ` \  / /|_/ / _ `/ __/ _ \ ',
+        \ '/_/|_/|___/_/_/_/_/ /_/  /_/\_,_/\__/_//_/ ',
         \]
 let g:startify_lists = [
+        \ { 'type': 'files',     'header': ['   Recents']            },
         \ { 'type': 'sessions',  'header': ['   Sessions']       },
         \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
         \ { 'type': 'commands',  'header': ['   Commands']       },
@@ -213,12 +231,16 @@ let g:closetag_shortcut = '>'
 
 let g:move_key_modifier = 'C'
 
-let g:indent_blankline_enabled = v:false
+let g:indentLine_enabled = 0
 nnoremap <Leader>l :IndentBlanklineToggle<CR>
 let g:indentLine_char = '|'
-let g:indentLine_setColors = 1
+let g:indentLine_setColors = 0
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indent_blankline_filetype_exclude = ['help', 'startify']
+
+let g:better_whitespace_guicolor='<desired_color>'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
 let g:user_emmet_leader_key=','
 nnoremap <Leader> ,,<CR>
@@ -235,22 +257,31 @@ nnoremap <leader>n :NnnPicker %:p:h<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#session = 'global'
 
-let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-sh', 'coc-htmlhint', 'coc-highlight', 'coc-html-css-support']
+let g:coc_global_extensions = ['coc-html','coc-css','coc-tsserver','coc-json','coc-sh','coc-htmlhint','coc-highlight','coc-html-css-support']
 
 
 call quickmenu#reset()
-noremap <Space>c :call quickmenu#toggle(0)<CR>
 
-call quickmenu#append("# Colorscheme", '')
-call quickmenu#append("TokyoNight", 'colorscheme tokyonight', "TokyoNight Colorscheme")
-call quickmenu#append("Gruvbox", 'colorscheme gruvbox', "Gruvbox Colorscheme")
-call quickmenu#append("OneDark", 'colorscheme onedark', "OneDark Colorscheme")
+" enable cursorline (L) and cmdline help (H)
+let g:quickmenu_options = "HL"
+
+noremap <silent><F12> :call quickmenu#toggle(0)
+
+
+" new section: empty action with text starts with "#" represent a new section
+call quickmenu#append("# Debug", '')
+
+" script between %{ and } will be evaluated before menu open
+call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
+
+call quickmenu#append("# Git", '')
+call quickmenu#append("git diff", 'Gvdiff', "use fugitive's Gvdiff on current document")
+call quickmenu#append("git add", 'Gvdiff', "use fugitive's Gvdiff on current document")
+call quickmenu#append("git commit", 'Gvdiff', "use fugitive's Gvdiff on current document")
+call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
 
 call quickmenu#append("# Misc", '')
-call quickmenu#append("Indentline", "IndentBlanklineToggle", "Toggle IndentLine")
-call quickmenu#append("Rainbow", "RainbowToggle", "Toggle Rainbow")
-call quickmenu#append("Line Numbers", "set nonu", "Toggle Line Numbers")
+call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 
-call quickmenu#append("# Debug", '')
-call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
+call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")

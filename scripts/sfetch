@@ -1,0 +1,111 @@
+#!/usr/bin/bash
+
+#colors
+#bold="(tput bold)"
+magenta="\033[1;35m"
+green="\033[1;32m"
+white="\033[1;37m"
+blue="\033[1;34m"
+red="\033[1;31m"
+black="\033[1;40;30m"
+yellow="\033[1;33m"
+cyan="\033[1;36m"
+reset="\033[0m"
+bgyellow="\033[1;43;33m"
+bgwhite="\033[1;47;37m"
+c0="${reset}"
+c1="${magenta}"
+c2="${green}"
+c3="${white}"
+c4="${blue}"
+c5="${red}"
+c6="${yellow}"
+c7="${cyan}"
+c8="${black}"
+c9="${bgyellow}"
+c10="${bgwhite}"
+
+#getting the init
+get_init() {
+    os="$(uname -o)"
+    if [[ "$os" = "Android" ]]; then
+       echo "init.rc"
+    fi
+}
+
+#get total packages
+net_pkg() {
+    pack="$(which {xbps-install,apk,apt,pacman,nix,dnf,rpm,dpkg,emerge} 2>/dev/null | grep -v "not found" | awk -F/ 'NR==1{print $NF}')"
+  case "${pack}" in
+      "xbps-install")
+	 total=$(xbps-query -l | wc -l)
+	 ;;
+      "apk")
+	 total=$(apk search | wc -l)
+	 ;;
+      "apt")
+	 total=$(apt list --installed 2>/dev/null | wc -l)
+	 ;;
+      "pacman")
+	 total=$(pacman -Q | wc -l)
+	 ;;
+      "nix")
+	 total=$(nix-env -qa --installed "*" | wc -l)
+	 ;;
+      "dnf")
+	 total=$(dnf list installed | wc -l)
+	 ;;
+      "rpm")
+	 total=$(rpm -qa | wc -l)
+	 ;;
+      "emerge")
+	 total=$(qlist -I | wc -l)
+	 ;;
+#      "dpkg")
+#	 total=$(dpkg-query -l | wc -l)
+#	 ;;
+      "")
+	 total="Unknown"
+	 ;;
+  esac
+
+  echo $total
+}
+
+distro_detect() {
+    os="$(uname -o)"
+    case "${os}" in
+	Android)
+	   distro="Android"
+	   ;;
+	*)
+	   distro="$(source /etc/os-release && echo "${PRETTY_NAME}")"
+	   ;;
+    esac
+}
+
+storage_info() {
+    storageused=$(df -h / | grep "/" | awk '{print $3}')
+    storageavail=$(df -h / | grep "/" | awk '{print $2}')
+}
+
+get_mem () {
+  free --mega | sed -n -E '2s/^[^0-9]*([0-9]+) *([0-9]+).*/'"${space}"'\2 \/ \1 MB/p'
+}
+# fetch output
+distro_detect
+storage_info
+echo ""
+echo -e "●     ___   _____ ●  ${c6}os${c3}    ${c6}${distro} $(uname -m)${c3}"
+echo -e "     /   | / ___/    ${c8}pkgs${c3}              ${c8}$(net_pkg)${c3}"
+echo -e "    / /| | \__ \     ${c5}sh${c3}              ${c5}$(basename "${SHELL}")${c3}"
+echo -e "   / ___ |___/ /     ${c7}ram${c3}   ${c7}$(get_mem)${c3}"
+echo -e "  /_/  |_/____/	     ${c2}init${c3}         ${c2}$(get_init)${c3}"
+echo -e "●                 ●  ${c4}rom${c3}      ${c4}$storageused / $storageavail${c3}"
+echo ""
+#echo "_________________________________________"
+
+echo -e "${c8}Github${c3} ☆ ${c2}ayeSpacey${c3}               ${c8}AyeSumit${c3}"
+#echo -e "$(date | awk '{print $1", " $3" " $2}')"
+echo ""
+
