@@ -1,5 +1,5 @@
-"●     ___   _____ ●
 "     /   | / ___/     ○ Sumit Burman
+"●     ___   _____ ●
 "    / /| | \__ \      ● @ayesumit/spacey 
 "   / ___ |___/ /      □ Nvim Configs 
 "  /_/  |_/____/       ■ For Web....
@@ -16,67 +16,71 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-"Color Schemes
+"    Color Schemes
 Plug 'morhetz/gruvbox'
+Plug 'wadackel/vim-dogrun'
 Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
 Plug 'ghifarit53/tokyonight-vim'
 
-"Other Colors
+"        UI
 Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'luochen1990/rainbow'
-
-"Plug 'glepnir/dashboard-nvim'
 Plug 'mhinz/vim-startify'
+"--Plug 'glepnir/dashboard-nvim'
 
-"Editing
+"      Editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'
 
-"Syntax
+"       Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 
-"Utility
+"     Enhancements
+Plug 'psliwka/vim-smoothie'
 Plug '907th/vim-auto-save'
-Plug 'mcchrish/nnn.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'luochen1990/rainbow'
+
+"        Others
 Plug 'mhinz/vim-signify'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'skywind3000/quickmenu.vim'
-Plug 'junegunn/vim-peekaboo'
 Plug 'jbyuki/instant.nvim'
 
-"pairs and indent
-Plug 'tpope/vim-sleuth'
+"         Tools
+Plug 'mcchrish/nnn.vim'
+Plug 'skywind3000/quickmenu.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dkramer95/KSwitch'
+
+"     Pairs and Indent
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+"--Plug 'tpope/vim-sleuth'
 
-"Snippets and Completion
+"   Snippets and Completion
 Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 
 call plug#end()
 
 let g:instant_username = "spacey"
 
+
 syntax enable
 set termguicolors
 set background=dark
-colorscheme tokyonight
-
+colorscheme OceanicNext
 
 filetype on
 set number
-"set relativenumber
 set cursorline
 set ruler
 set mouse=a
@@ -119,6 +123,7 @@ set foldnestmax=10
 set foldlevelstart=99
 
 " Misc
+set fillchars=""
 set formatoptions-=cro
 set updatetime=250
 set autochdir
@@ -126,13 +131,12 @@ set autochdir
 "Backups
 set nobackup
 set nowritebackup
+set undofile
 "set backupdir=~/.config/nvim/backups
 "set directory=~/.config/nvim/swaps
-set undofile
 "set undodir=~/.config/nvim/.tmp
 
 " Remaps
-"Basics
 let mapleader=","
 
 "au! BufWritePost $MYVIMRC source %
@@ -155,13 +159,14 @@ inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
 inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
+inoremap <expr> <TAB> pumvisible() ? "<C-y>" :"<CR>"
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 
 autocmd VimResized * wincmd =
 
 " Plugin Config zone
 let g:lightline = {
-\   'colorscheme': 'onedark',
+\   'colorscheme': 'ayu',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'modified' ]],
@@ -231,7 +236,7 @@ let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 let g:nnn#set_default_mappings = 0
-nnoremap <leader>n :NnnPicker %:p:h<CR>
+nnoremap <Space>n :NnnPicker %:p:h<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#session = 'global'
 
@@ -243,8 +248,10 @@ noremap <Space>c :call quickmenu#toggle(0)<CR>
 
 call quickmenu#append("# Colorscheme", '')
 call quickmenu#append("TokyoNight", 'colorscheme tokyonight', "TokyoNight Colorscheme")
-call quickmenu#append("Gruvbox", 'colorscheme gruvbox', "Gruvbox Colorscheme")
-call quickmenu#append("OneDark", 'colorscheme onedark', "OneDark Colorscheme")
+call quickmenu#append("Gruvbox", 'colorscheme gruvbox', "Yellowish Fellow")
+call quickmenu#append("OneDark", 'colorscheme onedark', "Dark Bright")
+call quickmenu#append("OceanicNext", 'colorscheme OceanicNext', "Evergreen Tinted")
+call quickmenu#append("Dogrun", 'colorscheme dogrun', "Purpalist Minimalist")
 
 call quickmenu#append("# Misc", '')
 call quickmenu#append("Indentline", "IndentBlanklineToggle", "Toggle IndentLine")
