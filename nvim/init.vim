@@ -1,5 +1,5 @@
-"     /   | / ___/     ○ Sumit Burman
 "●     ___   _____ ●
+"     /   | / ___/     ○ Sumit Burman
 "    / /| | \__ \      ● @ayesumit/spacey 
 "   / ___ |___/ /      □ Nvim Configs 
 "  /_/  |_/____/       ■ For Web....
