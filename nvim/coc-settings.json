@@ -7,13 +7,9 @@
         "coc.preferences.formatOnSaveFiletypes": [
                 "html",
                 "css",
-                "javascript",
-                "typescript",
-                "typescriptreact",
-                "json",
-                "javascriptreact",
-                "typescript.tsx"
+                "javascript"
         ],
+        "coc.preferences.colorSupport": false,
         "diagnostic.errorSign": "•",
         "diagnostic.warningSign": "*",
         "diagnostic.infoSign": "¶",
@@ -21,9 +17,6 @@
         "html-css-support.styleSheets": [
                 "css/style.css",
                 "style.css"
-        ],
-        "snippets.ultisnips.directories": [
-                "vim-snippets/snippets"
         ],
         "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
         "snippets.ultisnips.enable": false,

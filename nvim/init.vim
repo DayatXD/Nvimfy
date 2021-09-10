@@ -47,6 +47,7 @@ Plug '907th/vim-auto-save'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'luochen1990/rainbow'
+Plug 'ap/vim-css-color'
 
 "        Others
 Plug 'mhinz/vim-signify'
@@ -62,6 +63,7 @@ Plug 'dkramer95/KSwitch'
 "     Pairs and Indent
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'AndrewRadev/tagalong.vim'
 "--Plug 'tpope/vim-sleuth'
 
 "   Snippets and Completion
