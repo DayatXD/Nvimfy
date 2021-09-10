@@ -150,12 +150,20 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-q> :wq!<CR>
 nnoremap qq :q!<CR>
 
+nnoremap <space> :
+
 nnoremap <Space><Space> za<CR>
 
-noremap <silent> <C-Up> :res +2<CR>
-noremap <silent> <C-Down> :res -2<CR>
-noremap <silent> <C-Left> :vert res +2<CR>
-noremap <silent> <C-Right> :vert res -2<CR>
+nnoremap o o<esc>
+nnoremap O O<esc>
+
+nnoremap n nzz
+nnoremap N Nzz
+
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
 
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
