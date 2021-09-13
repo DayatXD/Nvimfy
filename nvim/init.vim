@@ -6,6 +6,9 @@
 "●                 ●        
 "____________________________________
 
+lua << EOF
+require("base")
+EOF
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
@@ -285,7 +288,24 @@ call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/
 call quickmenu#append("# Debug", '')
 call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
 
-"  Calling Some Lua Configuration
-lua << EOF
-require("base")
-EOF
+function! BreakHabitsWindow() abort
+    let width = 50
+    let height = 30
+
+    let buf = nvim_create_buf(v:false, v:true)
+    let ui = nvim_list_uis()[0]
+    let opts = {'relative': 'editor',
+                \ 'width': width,
+                \ 'height': height,
+                \ 'col': (ui.width/2) - (width/2),
+                \ 'row': (ui.height/2) - (height/2),
+                \ 'anchor': 'NW',
+                \ 'style': 'minimal',
+                \ }
+    let win = nvim_open_win(buf, 1, opts)
+endfunction
+
+let g:plug_window = 'call BreakHabitsWindow()'
+
+"Written with  ❤️  by AyeSpacey
+"------------End-Of-File-----------
