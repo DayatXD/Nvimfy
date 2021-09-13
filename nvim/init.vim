@@ -7,24 +7,20 @@
 "____________________________________
 
 
-" Auto Insall
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent execute "!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 "    Color Schemes
-Plug 'morhetz/gruvbox'
+Plug 'glepnir/zephyr-nvim'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'wadackel/vim-dogrun'
-Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'Avimitin/neovim-deus'
 
 "        UI
-Plug 'itchyny/lightline.vim'
+Plug 'akinsho/bufferline.nvim'
+Plug 'glepnir/galaxyline.nvim'
+"Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 "--Plug 'glepnir/dashboard-nvim'
 
@@ -36,6 +32,7 @@ Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'
 
 "       Syntax
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
@@ -46,8 +43,11 @@ Plug 'psliwka/vim-smoothie'
 Plug '907th/vim-auto-save'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'yamatsum/nvim-cursorline'
 Plug 'luochen1990/rainbow'
-Plug 'ap/vim-css-color'
+"Plug 'ap/vim-css-color'
+"Plug 'etdev/vim-hexcolor'
+Plug 'kyazdani42/nvim-web-devicons'
 
 "        Others
 Plug 'mhinz/vim-signify'
@@ -75,11 +75,10 @@ call plug#end()
 
 let g:instant_username = "spacey"
 
-
 syntax enable
 set termguicolors
 set background=dark
-colorscheme OceanicNext
+colorscheme zephyr
 
 filetype on
 set number
@@ -120,7 +119,8 @@ set shiftwidth=2
 
 " Folds
 set foldenable
-set foldmethod=syntax
+set foldmethod=expr  "syntax
+set foldexpr=nvim_treesitter#foldexpr()
 set foldnestmax=10
 set foldlevelstart=99
 
@@ -169,14 +169,14 @@ inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
 inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
-inoremap <expr> <TAB> pumvisible() ? "<C-y>" :"<CR>"
+inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>":
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 
 autocmd VimResized * wincmd =
 
 " Plugin Config zone
 let g:lightline = {
-\   'colorscheme': 'ayu',
+\   'colorscheme': 'nightfox',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'modified' ]],
@@ -197,6 +197,18 @@ let g:lightline = {
 \ },
 \}
 
+nnoremap <silent>[b :BufferLineCycleNext<CR>
+nnoremap <silent>b] :BufferLineCyclePrev<CR>
+
+" These commands will move the current buffer backwards or forwards in the bufferline
+nnoremap <silent><mymap> :BufferLineMoveNext<CR>
+nnoremap <silent><mymap> :BufferLineMovePrev<CR>
+
+" These commands will sort buffers by directory, language, or a custom criteria
+nnoremap <silent>be :BufferLineSortByExtension<CR>
+nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+
 let g:rainbow_active = 0
 
 let g:startify_custom_header = [
@@ -205,7 +217,7 @@ let g:startify_custom_header = [
         \ '    / /| | \__ \    / /|_/ / _ `/ __/ _ \',
         \ '   / ___ |___/ /   /_/  /_/\_,_/\__/_//_/',
         \ '  /_/  |_/____/         ',
-        \ '●                 ●     version: 1.6     ',
+        \ '●                 ●     version: 1.8     ',
         \]
 let g:startify_lists = [
         \ { 'type': 'sessions',  'header': ['   Sessions']       },
@@ -231,9 +243,11 @@ let g:move_key_modifier = 'C'
 let g:indent_blankline_enabled = v:false
 nnoremap <Leader>l :IndentBlanklineToggle<CR>
 let g:indentLine_char = '|'
-let g:indentLine_setColors = 1
+"let g:indentLine_setColors = 1
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indent_blankline_filetype_exclude = ['help', 'startify']
+
+let g:cursorline_timeout = 2000
 
 let g:user_emmet_leader_key=','
 nnoremap <Leader> ,,<CR>
@@ -250,16 +264,15 @@ nnoremap <Space>n :NnnPicker %:p:h<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 let g:nnn#session = 'global'
 
-let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-sh', 'coc-htmlhint', 'coc-highlight', 'coc-html-css-support']
-
+"let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-sh', 'coc-htmlhint', 'coc-highlight', 'coc-html-css-support']
 
 call quickmenu#reset()
 noremap <Space>c :call quickmenu#toggle(0)<CR>
 
 call quickmenu#append("# Colorscheme", '')
 call quickmenu#append("TokyoNight", 'colorscheme tokyonight', "TokyoNight Colorscheme")
-call quickmenu#append("Gruvbox", 'colorscheme gruvbox', "Yellowish Fellow")
-call quickmenu#append("OneDark", 'colorscheme onedark', "Dark Bright")
+call quickmenu#append("NightFox", 'colorscheme nightfox', "Night Fellow")
+call quickmenu#append("Deus", 'colorscheme deus', "Dark Dungeon")
 call quickmenu#append("OceanicNext", 'colorscheme OceanicNext', "Evergreen Tinted")
 call quickmenu#append("Dogrun", 'colorscheme dogrun', "Purpalist Minimalist")
 
@@ -271,3 +284,8 @@ call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/
 
 call quickmenu#append("# Debug", '')
 call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
+
+"  Calling Some Lua Configuration
+lua << EOF
+require("base")
+EOF

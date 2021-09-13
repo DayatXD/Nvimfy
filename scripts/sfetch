@@ -97,15 +97,13 @@ distro_detect
 storage_info
 echo ""
 echo -e "●     ___   _____ ●  ${c6}os${c3}    ${c6}${distro} $(uname -m)${c3}"
-echo -e "     /   | / ___/    ${c8}pkgs${c3}              ${c8}$(net_pkg)${c3}"
+echo -e "     /   | / ___/    ${c8}pkgs${c3}             ${c8}$(net_pkg)${c3}"
 echo -e "    / /| | \__ \     ${c5}sh${c3}              ${c5}$(basename "${SHELL}")${c3}"
 echo -e "   / ___ |___/ /     ${c7}ram${c3}   ${c7}$(get_mem)${c3}"
 echo -e "  /_/  |_/____/	     ${c2}init${c3}         ${c2}$(get_init)${c3}"
 echo -e "●                 ●  ${c4}rom${c3}      ${c4}$storageused / $storageavail${c3}"
 echo ""
 #echo "_________________________________________"
-
 echo -e "${c8}Github${c3} ☆ ${c2}ayeSpacey${c3}               ${c8}AyeSumit${c3}"
-#echo -e "$(date | awk '{print $1", " $3" " $2}')"
 echo ""
 

@@ -5,6 +5,9 @@ export HDIR=/sdcard/aye@sumit
 export PS1='\[\e[0;32m\]\W\[\e[0m\] \[\e[0;97m\]>\[\e[0m\] '
 export PS2="-> "
 
+export LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.md=38;5;68:*.log=38;5;68:*.c=38;5;169:*.h=38;5;135:*.o=38;5;97:*.y=38;5;99:*.l=38;5;99:*.sh=38;5;104"
+export EXA_COLORS="*.md=38;5;68:*.log=38;5;68:*.c=38;5;169:*.h=38;5;135:*.o=38;5;97:*.y=38;5;99:*.l=38;5;99:*.sh=38;5;104"
+
 #On Startup
 sfetch
 cd $HDIR
@@ -50,4 +53,5 @@ lsd
 #echo -e "\e[4 q"
 #cursor pipe
 echo -e "\e[6 q"
+
 

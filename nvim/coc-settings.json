@@ -1,7 +1,7 @@
 {
         "suggest.enablePreselect": true,
         "suggest.noselect": false,
-        "suggest.snippetIndicator": " ►",
+        "suggest.snippetIndicator": "  ►",
         "suggest.triggerAfterInsertEnter": true,
         "suggest.autoTrigger": "always",
         "coc.preferences.formatOnSaveFiletypes": [
@@ -11,7 +11,7 @@
         ],
         "coc.preferences.colorSupport": false,
         "diagnostic.errorSign": "•",
-        "diagnostic.warningSign": "*",
+        "diagnostic.warningSign": "!",
         "diagnostic.infoSign": "¶",
         "diagnostic.virtualText": true,
         "html-css-support.styleSheets": [
