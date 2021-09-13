@@ -57,7 +57,8 @@ Plug 'mhinz/vim-signify'
 Plug 'jbyuki/instant.nvim'
 
 "         Tools
-Plug 'mcchrish/nnn.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf
+Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -262,12 +263,13 @@ let g:auto_save = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-let g:nnn#set_default_mappings = 0
-nnoremap <Space>n :NnnPicker %:p:h<CR>
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-let g:nnn#session = 'global'
+nnoremap <Space>n :Files<CR>
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 
 "let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-sh', 'coc-htmlhint', 'coc-highlight', 'coc-html-css-support']
+let g:coc_global_extensions = ['coc-json', 'coc-highlight', 'coc-marketplace']
 
 call quickmenu#reset()
 noremap <Space>c :call quickmenu#toggle(0)<CR>
