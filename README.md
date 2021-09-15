@@ -2,5 +2,5 @@
 
 ## Under Development 🛠 
 
-![1](preview/neovim-mockup.png)
-![2](preview/term-mockup.png)
+![1](previews/neovim-mockup.png)
+![2](previews/term-mockup.png)
