@@ -30,11 +30,12 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
+  <a href="#prerequisites">Prerequisites</a> •
+  <a href="#how-to-setup">Setup</a> •
+  <a href="#showcase">Showcase</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#support">Contribute</a>
 </p>
 
 ## Key Features
@@ -74,7 +75,7 @@ git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
 Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux) my whole configuration for your Termux
 
 
-## Screenshots
+## Showcase
 
 ![](/previews/neovim-mockup.png)
 
@@ -95,8 +96,10 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 ## Related
 
-- [LunarVim]
-- [Nvchad]
+- [LunarVim](https://github.com/LunarVim/LunarVim)
+- for how to implement lua
+- [Nvchad](https://github.com/NvChad/NvChad)
+- for structuring readme
 
 ## You may also like...
 
