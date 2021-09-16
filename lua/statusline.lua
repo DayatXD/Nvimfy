@@ -235,7 +235,7 @@ insert_left{
 
 insert_left {
   GitIcon = {
-    provider = function() return ' ' end,
+    provider = function() return '  ' end,
     condition = require('galaxyline.provider_vcs').check_git_workspace,
     highlight = {colors.orange,colors.line_bg},
   }

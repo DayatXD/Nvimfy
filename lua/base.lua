@@ -1,6 +1,7 @@
 --Base Plugin Configs
 
-require("statusline")
+--require("statusline")
+
 require("bufferline").setup{}
 
 require'nvim-treesitter.configs'.setup {

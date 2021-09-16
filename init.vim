@@ -1,7 +1,7 @@
 "●     ___   _____ ●
 "     /   | / ___/     ○ Sumit Burman
-"    / /| | \__ \      ● @ayesumit/spacey 
-"   / ___ |___/ /      □ Nvim Configs 
+"    / /| | \__ \      ● AyeSpacey-/-@ayesumit
+"   / ___ |___/ /      □ Nvim Configs
 "  /_/  |_/____/       ■ For Web....
 "●                 ●        
 "____________________________________
@@ -10,7 +10,7 @@ lua << EOF
 require("base")
 EOF
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.config/nvim/plugins')
 
 "    Color Schemes
 Plug 'glepnir/zephyr-nvim'
@@ -21,11 +21,10 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'Avimitin/neovim-deus'
 
 "        UI
-Plug 'akinsho/bufferline.nvim'
-Plug 'glepnir/galaxyline.nvim'
-"Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
-"--Plug 'glepnir/dashboard-nvim'
+Plug 'akinsho/bufferline.nvim'
+Plug 'itchyny/lightline.vim'
+" Plug 'glepnir/galaxyline.nvim'
 
 "      Editing
 Plug 'tpope/vim-commentary'
@@ -52,12 +51,13 @@ Plug 'luochen1990/rainbow'
 "Plug 'etdev/vim-hexcolor'
 Plug 'kyazdani42/nvim-web-devicons'
 
-"        Others
+"        Git
 Plug 'mhinz/vim-signify'
+
+"        
 Plug 'jbyuki/instant.nvim'
 
 "         Tools
-Plug 'junegunn/fzf', { 'do': { -> fzf
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -121,7 +121,7 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
-" Folds
+" Folds       --Currently Working--
 set foldenable
 set foldmethod=expr  "syntax
 set foldexpr=nvim_treesitter#foldexpr()
@@ -154,15 +154,10 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-q> :wq!<CR>
 nnoremap qq :q!<CR>
 
-nnoremap <space> :
-
 nnoremap <Space><Space> za<CR>
 
 nnoremap o o<esc>
 nnoremap O O<esc>
-
-nnoremap n nzz
-nnoremap N Nzz
 
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
@@ -179,6 +174,7 @@ inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 autocmd VimResized * wincmd =
 
 " Plugin Config zone
+
 let g:lightline = {
 \   'colorscheme': 'nightfox',
 \   'active': {
@@ -247,9 +243,8 @@ let g:move_key_modifier = 'C'
 let g:indent_blankline_enabled = v:false
 nnoremap <Leader>l :IndentBlanklineToggle<CR>
 let g:indentLine_char = '|'
-"let g:indentLine_setColors = 1
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indent_blankline_filetype_exclude = ['help', 'startify']
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 let g:cursorline_timeout = 2000
 
@@ -263,23 +258,32 @@ let g:auto_save = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-nnoremap <Space>n :Files<CR>
+nnoremap <Space>f :Files<CR>
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+" Recomended
+" --coc-html
+" --coc-css
+" --coc-tsserver
+" --coc-json
+" --coc-sh
+" --coc-htmlhint
+" --coc-highlight
+" --coc-html-css-support
 
-"let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-tsserver', 'coc-json', 'coc-sh', 'coc-htmlhint', 'coc-highlight', 'coc-html-css-support']
-let g:coc_global_extensions = ['coc-json', 'coc-highlight', 'coc-marketplace']
+let g:coc_global_extensions = ['coc-marketplace','coc-json', 'coc-highlight']
 
+" Use Space + c for useful menu
 call quickmenu#reset()
 noremap <Space>c :call quickmenu#toggle(0)<CR>
 
-call quickmenu#append("# Colorscheme", '')
-call quickmenu#append("TokyoNight", 'colorscheme tokyonight', "TokyoNight Colorscheme")
-call quickmenu#append("NightFox", 'colorscheme nightfox', "Night Fellow")
-call quickmenu#append("Deus", 'colorscheme deus', "Dark Dungeon")
-call quickmenu#append("OceanicNext", 'colorscheme OceanicNext', "Evergreen Tinted")
-call quickmenu#append("Dogrun", 'colorscheme dogrun', "Purpalist Minimalist")
+call quickmenu#append("# Tools", '')
+call quickmenu#append("Project Folder", 'Files', "Shows Directory and Files In PWD")
+call quickmenu#append("Buffers", 'Buffers', "Shows Directory and Files In PWD")
+call quickmenu#append("Theme", 'Colors', "Change Colorscheme Locally")
+call quickmenu#append("Maps", 'Maps', "Show Editor Mappings  --Currently Working")
+call quickmenu#append("Command Mode", ':Commands', "Runs Commands")
 
 call quickmenu#append("# Misc", '')
 call quickmenu#append("Indentline", "IndentBlanklineToggle", "Toggle IndentLine")
@@ -287,8 +291,6 @@ call quickmenu#append("Rainbow", "RainbowToggle", "Toggle Rainbow")
 call quickmenu#append("Line Numbers", "set nonu", "Toggle Line Numbers")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 
-call quickmenu#append("# Debug", '')
-call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
 
 function! BreakHabitsWindow() abort
     let width = 50
@@ -309,5 +311,5 @@ endfunction
 
 let g:plug_window = 'call BreakHabitsWindow()'
 
-"Written with  ❤️  by AyeSpacey
+"  Written with  ❤️  by AyeSpacey
 "------------End-Of-File-----------
