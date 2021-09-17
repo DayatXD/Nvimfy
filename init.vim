@@ -47,28 +47,21 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'yamatsum/nvim-cursorline'
 Plug 'luochen1990/rainbow'
-"Plug 'ap/vim-css-color'
-"Plug 'etdev/vim-hexcolor'
 Plug 'kyazdani42/nvim-web-devicons'
 
 "        Git
 Plug 'mhinz/vim-signify'
 
-"        
-Plug 'jbyuki/instant.nvim'
-
 "         Tools
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dkramer95/KSwitch'
+Plug 'jbyuki/instant.nvim'
 
 "     Pairs and Indent
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/tagalong.vim'
-"--Plug 'tpope/vim-sleuth'
 
 "   Snippets and Completion
 Plug 'mattn/emmet-vim'
@@ -82,7 +75,7 @@ let g:instant_username = "spacey"
 syntax enable
 set termguicolors
 set background=dark
-colorscheme zephyr
+colorscheme dogrun
 
 filetype on
 set number
@@ -100,7 +93,7 @@ set cmdheight=1
 set wildmenu
 set laststatus=2
 set completeopt=menuone,longest
-set pumheight=4
+set pumheight=5
 set shortmess+=c
 
 " Term
@@ -138,8 +131,6 @@ set autochdir
 set nobackup
 set nowritebackup
 set undofile
-"set backupdir=~/.config/nvim/backups
-"set directory=~/.config/nvim/swaps
 "set undodir=~/.config/nvim/.tmp
 
 " Remaps
@@ -230,10 +221,7 @@ let g:startify_bookmarks = [
             \ { 'z': '~/.zshrc' },
             \ '~/storage/shared/',
             \ ]
-"let g:startify_session_dir = '~/.config/nvim/sessions'
-"let g:startify_session_autoload = 0
-"let g:startify_session_delete_buffers = 1
-"let g:startify_enable_special = 0
+let g:startify_enable_special = 0
 
 let g:closetag_filenames = '*.html'
 let g:closetag_shortcut = '>'
@@ -269,10 +257,9 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 " --coc-json
 " --coc-sh
 " --coc-htmlhint
-" --coc-highlight
 " --coc-html-css-support
 
-let g:coc_global_extensions = ['coc-marketplace','coc-json', 'coc-highlight']
+let g:coc_global_extensions = ['coc-marketplace','coc-json']
 
 " Use Space + c for useful menu
 call quickmenu#reset()
@@ -288,14 +275,13 @@ call quickmenu#append("Command Mode", ':Commands', "Runs Commands")
 call quickmenu#append("# Misc", '')
 call quickmenu#append("Indentline", "IndentBlanklineToggle", "Toggle IndentLine")
 call quickmenu#append("Rainbow", "RainbowToggle", "Toggle Rainbow")
+call quickmenu#append("Colorizer", "ColorizerToggle", "Toggle Color Previews")
 call quickmenu#append("Line Numbers", "set nonu", "Toggle Line Numbers")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
-
 
 function! BreakHabitsWindow() abort
     let width = 50
     let height = 30
-
     let buf = nvim_create_buf(v:false, v:true)
     let ui = nvim_list_uis()[0]
     let opts = {'relative': 'editor',
@@ -308,8 +294,8 @@ function! BreakHabitsWindow() abort
                 \ }
     let win = nvim_open_win(buf, 1, opts)
 endfunction
-
 let g:plug_window = 'call BreakHabitsWindow()'
+
 
 "  Written with  ❤️  by AyeSpacey
 "------------End-Of-File-----------
