@@ -35,7 +35,7 @@
   <a href="#showcase">Showcase</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
-  <a href="#support">Contribute</a>
+  <a href="# 🤝 support">Contribute</a>
 </p>
 
 ## Key Features
