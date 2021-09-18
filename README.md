@@ -75,11 +75,14 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 
 ## Showcase
-
-![](/previews/neovim-mockup.png)
-
-![](/previews/pink.jpg)
-
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/git.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/menu.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/html.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/js.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/ocean.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
 
 ## Future Updates
 
