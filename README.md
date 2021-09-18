@@ -1,7 +1,6 @@
-## 🛠 - Bringing Some Changes in The Codebase
 <h1 align="center">
   <br>
-  <a href="#"><img src="https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/previews/neovim-mockup.png" alt="Nvimfy" /></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/nvimfy.png" alt="Nvimfy" /></a>
   <br>
   Nvimfy
   <br>
