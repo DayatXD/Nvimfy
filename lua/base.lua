@@ -1,4 +1,4 @@
-require 'colorizer'.setup()
+require'colorizer'.setup()
 
 require'nvim-treesitter.configs'.setup {
   --ensure_installed = "maintained", -- To Install All

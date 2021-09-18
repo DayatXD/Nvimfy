@@ -6,11 +6,8 @@
 "●                 ●        
 "____________________________________
 
-lua << EOF
-require("base")
-EOF
 
-call plug#begin('~/.config/nvim/plugins')
+call plug#begin('~/.config/nvim/plugged')
 
 "    Color Schemes
 Plug 'glepnir/zephyr-nvim'
@@ -45,6 +42,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'yamatsum/nvim-cursorline'
 Plug 'luochen1990/rainbow'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
 "        Git
@@ -148,17 +146,9 @@ nnoremap <Space><Space> za<CR>
 nnoremap o o<esc>
 nnoremap O O<esc>
 
-noremap <c-up> <c-w>+
-noremap <c-down> <c-w>-
-noremap <c-left> <c-w>>
-noremap <c-right> <c-w><
+" Add Here
 
-inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
-inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
-inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
-inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
-inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>":
-inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
+"
 
 autocmd VimResized * wincmd =
 
@@ -277,8 +267,8 @@ call quickmenu#append("Line Numbers", "set nonu", "Toggle Line Numbers")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 
 function! BreakHabitsWindow() abort
-    let width = 50
-    let height = 30
+    let width = 28
+    let height = 20
     let buf = nvim_create_buf(v:false, v:true)
     let ui = nvim_list_uis()[0]
     let opts = {'relative': 'editor',
@@ -298,6 +288,9 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+lua require('base')
 
-"  Written with  ❤️  by AyeSpacey
-"------------End-Of-File-----------
+let g:fzf_preview_window = ['up:80%:hidden', 'ctrl-/']
+
+"   Written with  ❤️  by AyeSpacey
+"-------------End-Of-File-----------
