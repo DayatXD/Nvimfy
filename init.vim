@@ -1,8 +1,8 @@
 "●     ___   _____ ●
 "     /   | / ___/     ○ Sumit Burman
-"    / /| | \__ \      ● AyeSpacey-/-@ayesumit
-"   / ___ |___/ /      □ Nvim Configs
-"  /_/  |_/____/       ■ For Web....
+"    / /| | \__ \      ● AyeSpacey
+"   / ___ |___/ /      □ @ayesumit
+"  /_/  |_/____/       ■ Nvim Configs
 "●                 ●        
 "____________________________________
 
@@ -73,7 +73,7 @@ let g:instant_username = "spacey"
 syntax enable
 set termguicolors
 set background=dark
-colorscheme dogrun
+colorscheme tokyonight
 
 filetype on
 set number
@@ -122,7 +122,7 @@ set foldlevelstart=99
 " Misc
 set fillchars=""
 set formatoptions-=cro
-set updatetime=250
+set updatetime=200
 set autochdir
 
 "Backups
@@ -165,7 +165,7 @@ autocmd VimResized * wincmd =
 " Plugin Config zone
 
 let g:lightline = {
-\   'colorscheme': 'nightfox',
+\   'colorscheme': 'tokyonight',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'modified' ]],
@@ -186,17 +186,17 @@ let g:lightline = {
 \ },
 \}
 
-nnoremap <silent>[b :BufferLineCycleNext<CR>
-nnoremap <silent>b] :BufferLineCyclePrev<CR>
+" nnoremap <silent>[b :BufferLineCycleNext<CR>
+" nnoremap <silent>b] :BufferLineCyclePrev<CR>
 
 " These commands will move the current buffer backwards or forwards in the bufferline
-nnoremap <silent><mymap> :BufferLineMoveNext<CR>
-nnoremap <silent><mymap> :BufferLineMovePrev<CR>
+" nnoremap <silent><mymap> :BufferLineMoveNext<CR>
+" nnoremap <silent><mymap> :BufferLineMovePrev<CR>
 
 " These commands will sort buffers by directory, language, or a custom criteria
-nnoremap <silent>be :BufferLineSortByExtension<CR>
-nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+" nnoremap <silent>be :BufferLineSortByExtension<CR>
+" nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+" nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 let g:rainbow_active = 0
 
@@ -209,7 +209,6 @@ let g:startify_custom_header = [
         \ '●                 ●     version: 1.8     ',
         \]
 let g:startify_lists = [
-        \ { 'type': 'sessions',  'header': ['   Sessions']       },
         \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
         \ { 'type': 'commands',  'header': ['   Commands']       },
         \ ]
