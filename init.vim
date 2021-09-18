@@ -22,9 +22,7 @@ Plug 'Avimitin/neovim-deus'
 
 "        UI
 Plug 'mhinz/vim-startify'
-Plug 'akinsho/bufferline.nvim'
 Plug 'itchyny/lightline.vim'
-" Plug 'glepnir/galaxyline.nvim'
 
 "      Editing
 Plug 'tpope/vim-commentary'
@@ -58,7 +56,7 @@ Plug 'skywind3000/quickmenu.vim'
 Plug 'dkramer95/KSwitch'
 Plug 'jbyuki/instant.nvim'
 
-"     Pairs and Indent
+"         Pairs
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'AndrewRadev/tagalong.vim'
@@ -295,6 +293,11 @@ function! BreakHabitsWindow() abort
     let win = nvim_open_win(buf, 1, opts)
 endfunction
 let g:plug_window = 'call BreakHabitsWindow()'
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 
 "  Written with  ❤️  by AyeSpacey
