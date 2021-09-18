@@ -14,11 +14,6 @@
 
 <div align="center">
 
-<a href="https://github.com/AyeSpacey/Nvimfy"
-        ><img
-            src="https://img.shields.io/github/repo-size/AyeSpacey/Nvimfy?style=flat-square&label=Repo"
-            alt="GitHub repository size"
-    /></a>
 [![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.5+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim)
 [![GitHub Issues](https://img.shields.io/github/issues/AyeSpacey/Nvimfy.svg?style=flat-square&label=Issues&color=fc0330)](https://github.com/AyeSpacey/Nvimfy/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/AyeSpacey/Nvimfy.svg?style=flat-square&label=Last%20Commit&color=58eb34)](https://github.com/AyeSpacey/Nvimfy/pulse)
