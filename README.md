@@ -62,9 +62,13 @@ In Order To Clone And Run This Perfectly fine you'll need installed on your devi
 apt install neovim git nodejs --no-install-recommends
 ```
 ## How To Setup
-remove the .config/nvim/*
+Clear the .config/nvim/*
 ```bash
 rm -rf ~/.config/nvim/*
+```
+if not create one .config/nvim
+```bash
+mkdir .config/nvim
 ```
 then, 
 ```bash
@@ -86,7 +90,7 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 ## Future Updates
 
-- [ ] Reliable Speed
+- [x] Reliable Speed
 - [ ] Native Lsp
 - [ ] All LuaScript
 - [ ] Git Integration in StatusLine 
