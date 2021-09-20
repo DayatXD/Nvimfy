@@ -29,7 +29,7 @@
   <a href="#showcase">Showcase</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
-  <a href="# 🤝 support">Contribute</a>
+  <a href="#support">Contribute</a>
 </p>
 
 ## Key Features
@@ -103,9 +103,7 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ## Related
 
 - [LunarVim](https://github.com/LunarVim/LunarVim)
-- for how to implement lua
 - [Nvchad](https://github.com/NvChad/NvChad)
-- for structuring readme
 
 ## You may also like...
 
