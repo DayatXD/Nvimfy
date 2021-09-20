@@ -8,8 +8,9 @@
 
 <div align="center">
 
-[![Lua](https://img.shields.io/badge/Made%20with%20Lua-red.svg?style=for-the-badge&logo=lua)](https://lua.org)
 [![Vimscript](https://img.shields.io/badge/Made%20with%20Vimscript-darkgreen.svg?style=for-the-badge&logo=vim)](https://vim.org)
+[![Lua](https://img.shields.io/badge/Made%20with%20Lua-red.svg?style=for-the-badge&logo=lua)](https://lua.org)
+
 </div>
 
 <div align="center">
