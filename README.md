@@ -62,6 +62,11 @@ In Order To Clone And Run This Perfectly fine you'll need installed on your devi
 apt install neovim git nodejs --no-install-recommends
 ```
 ## How To Setup
+remove the .config/nvim/*
+```bash
+rm -rf ~/.config/nvim/*
+```
+then, 
 ```bash
 git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
 ```
