@@ -89,6 +89,7 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/ocean.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
 
+- my [coc-settings.json](https://github.com/AyeSpacey/Nvimfy/wiki)
 ## Future Updates
 
 - [x] Reliable Speed
