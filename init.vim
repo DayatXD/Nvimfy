@@ -288,9 +288,9 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-lua require('base')
-
 let g:fzf_preview_window = ['up:80%:hidden', 'ctrl-/']
+
+lua require('base')
 
 "   Written with  ❤️  by AyeSpacey
 "-------------End-Of-File-----------
