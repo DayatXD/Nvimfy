@@ -89,7 +89,10 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/ocean.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
 
-- my [coc-settings.json](https://github.com/AyeSpacey/Nvimfy/wiki)
+- You May be interested in my Personal config: 
+  - my [coc-settings.json](https://github.com/AyeSpacey/Nvimfy/wiki/My-coc-settings.json)
+  - my [init.vim](https://github.com/AyeSpacey/Nvimfy/wiki/My-Init.vim)
+  - my [base.lua](https://github.com/AyeSpacey/Nvimfy/wiki/My-base.lua)
 ## Future Updates
 
 - [x] Reliable Speed
