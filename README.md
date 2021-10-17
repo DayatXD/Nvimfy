@@ -13,14 +13,17 @@
 
 </div>
 
+<h6 align="center">V-2.1</h6>
+
 <div align="center">
 
 [![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.5+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim)
 [![GitHub Issues](https://img.shields.io/github/issues/AyeSpacey/Nvimfy.svg?style=flat-square&label=Issues&color=fc0330)](https://github.com/AyeSpacey/Nvimfy/issues)
-[![Last Commit](https://img.shields.io/github/last-commit/AyeSpacey/Nvimfy.svg?style=flat-square&label=Last%20Commit&color=58eb34)](https://github.com/AyeSpacey/Nvimfy/pulse)
+[![Last Commit](https://img.shields.io/github/last-commit/AyeSpacey/Nvimfy.svg?style=flat-square&label=Last%20Commit&color=fc0330)](https://github.com/AyeSpacey/Nvimfy/pulse)
 
-  </div>
-<h4 align="center">A minimal and robust Neovim configuration, Built Keeping in Mind The ScreenSize and Robust Plugins, Especially For Termux That Wont Let You DOWN.</h4>
+</div>
+
+<h4 align="center">A minimal and robust Neovim configuration, Built For Your Android Screens For Termux That Wont Let You DOWN.</h4>
 
 
 <p align="center">
@@ -35,42 +38,54 @@
 
 ## Key Features
 
-* AutoSave 
-  - Make changes, See changes
+* AutoSave - Make changes, See changes
+* Syntax highlighting - Native & Treesitter
+* Code Intellisense & AutoCompletion - Much Like Vs-Code
+* Dark ColorSchemes - EyeCandy for Eyes
 * Smooth Scrolling
-* Syntax highlighting
-  - Native & Treesitter 
-* Code Intellisense & AutoCompletion
-  - Much Like Vs-Code
-* Sexy ColorSchemes - EyeCandy
-* Find files using FZF
-* Native Speed - Won't Slow Down
+
 * Robust Plugins (39)
+* Native Speed - Won't Slow Down
+
+ * Find files using FZF
+ * Quick access Commands Using Quickmenu         ( Space + c )
+ * Color Highlighter using nvim-colorizer
+ * Easily Write html using emmet                 ( , + , )
+ * Better Snippets
+ * Git Integretion Using Fugitive & Signify
+ * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
+
 * Do Anything Right on your 📱
 * Cross Platform
   - Android  [ Termux ]
-  - Windows
+  - Windows [ Nvim-qt ]
   - Mac [ Not Tested ]
 
 ## Prerequisites
 In Order To Clone And Run This Perfectly fine you'll need installed on your device. From your command line.
 
-* neovim
-* nodejs  (For AutoCompletion)
-* git
+* neovim  ( Ofcourse )
+
+* git     ( For Installing Plugins Using vim-plug)
+* nodejs  (For Lsp AutoCompletion )
+* clang   (For Treesitter Syntax Highlighting)
 
 ```bash
-apt install neovim git nodejs --no-install-recommends
+apt install neovim git nodejs clang fzf
 ```
+
 ## How To Setup
-Clear the .config/nvim/*
+
+Clear the ~/.config/nvim/*
 ```bash
 rm -rf ~/.config/nvim/*
 ```
-if not create one .config/nvim
+
+if not create one ~/.config/nvim
 ```bash
-mkdir .config/nvim
+mkdir ~/.config/nvim
 ```
+
 then, 
 ```bash
 git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
@@ -104,6 +119,7 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 - The Plugins I Used
 - awesomevim
+- neovimcraft
 
 ## Related
 
@@ -114,6 +130,6 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 - [Termify](https://github.com/AyeSpacey/Termify-Termux)  - EyeCandy For your Shell
 
-## 🤝 Support
+## Support
 #### Contributions, issues, and feature requests are welcome!
 Give a ⭐️ if you like this project!
