@@ -47,7 +47,7 @@
 
 * Robust Plugins (39)
 * Native Speed - Won't Slow Down
-
+----
  * Find files using FZF
  * Quick access Commands Using Quickmenu         ( Space + c )
  * Color Highlighter using nvim-colorizer
@@ -55,7 +55,7 @@
  * Better Snippets
  * Git Integretion Using Fugitive & Signify
  * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
-
+----
 * Do Anything Right on your 📱
 * Cross Platform
   - Android  [ Termux ]
