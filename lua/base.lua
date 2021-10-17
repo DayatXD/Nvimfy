@@ -1,5 +1,5 @@
 require'colorizer'.setup()
-
+require("autosave")
 require('Comment').setup()
 
 require'nvim-treesitter.configs'.setup {
