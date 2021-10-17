@@ -1,5 +1,8 @@
 require'colorizer'.setup()
 require("autosave")
+require('nvim-autopairs').setup({
+  ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
+})
 require('Comment').setup()
 
 require'nvim-treesitter.configs'.setup {
