@@ -73,11 +73,11 @@
 ## Prerequisites
 In Order To Clone And Run This Perfectly fine you'll need installed on your device. From your command line.
 
-* neovim  ( Ofcourse )
+* `neovim`  ( Ofcourse )
 
-* git     ( For Installing Plugins Using vim-plug)
-* nodejs  (For Lsp AutoCompletion )
-* clang   (For Treesitter Syntax Highlighting)
+* `git`     ( For Installing Plugins Using vim-plug)
+* `nodejs`  (For Lsp AutoCompletion )
+* `clang`   (For Treesitter Syntax Highlighting)
 
 ```bash
 apt install neovim git nodejs clang fzf
@@ -121,10 +121,10 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
 - [x] Reliable Speed
+- [ ] Git Integration in StatusLine
 - [ ] Native Lsp
 - [ ] All LuaScript
-- [ ] Git Integration in StatusLine 
-
+ 
 Suggestions are always welcome slightly_smiling_face!
 
 ## Credits
