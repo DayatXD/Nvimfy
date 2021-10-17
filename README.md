@@ -6,6 +6,8 @@
   <br>
 </h1>
 
+<h6 align="center">V-2.1</h6>
+
 <div align="center">
 
 [![Vimscript](https://img.shields.io/badge/Made%20with%20Vimscript-darkgreen.svg?style=for-the-badge&logo=vim)](https://vim.org)
@@ -13,7 +15,6 @@
 
 </div>
 
-<h6 align="center">V-2.1</h6>
 
 <div align="center">
 
