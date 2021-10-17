@@ -62,6 +62,14 @@
   - Windows [ Nvim-qt ]
   - Mac [ Not Tested ]
 
+## Install Language support
+
+- Enter `:CocInstall` followed by `<TAB>` to see your options for LSP
+
+- Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting
+
+**NOTE** I recommend installing `lua` & `vim` for autocomplete in `lua & vim configs`
+
 ## Prerequisites
 In Order To Clone And Run This Perfectly fine you'll need installed on your device. From your command line.
 
