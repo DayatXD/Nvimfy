@@ -11,29 +11,25 @@ call plug#begin('~/.config/nvim/plugged')
 
 "         Color Schemes
 Plug 'folke/tokyonight.nvim'
-Plug 'sainnhe/everforest'
-Plug 'mangeshrex/uwu.vim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'wadackel/vim-dogrun'
 Plug 'Avimitin/neovim-deus'
+Plug 'xiyaowong/nvim-transparent'
 
 "              UI
+Plug 'alvarosevilla95/luatab.nvim'
 Plug 'mhinz/vim-startify'
-Plug 'glepnir/galaxyline.nvim'
+Plug 'famiu/feline.nvim'
 
 "           Editing
-Plug 'numToStr/Comment.nvim'
-Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
-Plug 'Pocco81/AutoSave.nvim'
 Plug 'godlygeek/tabular'
 
 "           Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 
 "        Enhancements
@@ -42,6 +38,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'yamatsum/nvim-cursorline'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'kyazdani42/nvim-web-devicons'
 
 "             Git
 Plug 'mhinz/vim-signify'
@@ -50,17 +48,19 @@ Plug 'tpope/vim-fugitive'
 "            Tools
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
+Plug 'numToStr/Comment.nvim'
+Plug 'Pocco81/AutoSave.nvim'
+
 
 "            Pairs
-Plug 'steelsojka/pears.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'windwp/nvim-ts-autotag'
 
 "    Snippets and Completion
 Plug 'mattn/emmet-vim'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"--Plug 'vim-scripts/AutoComplPop'
 
 call plug#end()
 
@@ -159,25 +159,13 @@ noremap <Del> "_x
 
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
-inoremap <expr> <Right> pumvisible() ? "<C-y>" : 
-inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
+inoremap <expr> <Right> pumvisible() ? "<C-y>" :  "<Right>"
+inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 
 
 autocmd VimResized * wincmd =
 au FocusGained,BufEnter * :checktime
-
-" Reference chart of values:
-"   Ps = 0  -> blinking block.
-"   Ps = 1  -> blinking block (default).
-"   Ps = 2  -> steady block.
-"   Ps = 3  -> blinking underline.
-"   Ps = 4  -> steady underline.
-"   Ps = 5  -> blinking bar (xterm).
-"   Ps = 6  -> steady bar (xterm).
-let &t_SI = "\e[3 q"
-let &t_EI = "\e[4 q"
-
 
 " Plugin Remaps
 
@@ -209,22 +197,21 @@ let g:startify_custom_header = startify#center(g:nvimfy_header)
 let g:startify_custom_footer = startify#center(g:nvimfy_footer)
 
 let g:startify_lists = [
-        \ { 'type': 'bookmarks', 'header': ['              Quick Access'] },
+        \ { 'type': 'bookmarks'},
         \ { 'type': 'commands'},
         \ ]
 let g:startify_bookmarks = [
-        \ { 'i': '~/.config/nvim/init.vim' },
-        \ { 'b': '~/.bashrc' },
         \ { 'z': '~/.zshrc' },
+        \ { 'i': '~/.config/nvim/init.vim' },
         \ '~/storage/shared/',
         \ ]
 let g:startify_commands = [
-        \ {'f': ['Files', ':Files']},           
+        \ {'f': ['Files', ':Files']},
+        \ {'c': ['Colors', ':Colors']},
         \ ]
 
 let g:startify_enable_special = 0
 let g:startify_padding_left = 2
-let g:startify_relative_path = 0
  
 
 let g:move_key_modifier = 'C'
@@ -253,6 +240,13 @@ let g:coc_global_extensions = ['coc-marketplace','coc-json']
 " Use Space + c for useful menu
 call quickmenu#reset()
 
+let g:quickmenu_padding_left = 0
+let g:quickmenu_padding_right = 1
+let g:quickmenu_ft_blacklist = []
+let g:quickmenu_options = 'HL'
+
+call quickmenu#header('')
+
 call quickmenu#append("# Utility", '')
 call quickmenu#append("Files", 'Files', "Shows Directory and Files")
 call quickmenu#append("Buffers", 'Buffers', "Shows Buffers")
@@ -267,7 +261,7 @@ call quickmenu#append("Spell Check", "set spell!", "Toggle Spell Check")
 
 
 function! FloatWindow() abort
-    let width = 28
+    let width = 30
     let height = 20
     let buf = nvim_create_buf(v:false, v:true)
     let ui = nvim_list_uis()[0]
