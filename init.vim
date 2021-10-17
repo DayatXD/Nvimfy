@@ -9,81 +9,80 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-"    Color Schemes
-Plug 'glepnir/zephyr-nvim'
+"         Color Schemes
+Plug 'folke/tokyonight.nvim'
+Plug 'sainnhe/everforest'
+Plug 'mangeshrex/uwu.vim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'wadackel/vim-dogrun'
-Plug 'mhartington/oceanic-next'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'Avimitin/neovim-deus'
 
-"        UI
+"              UI
 Plug 'mhinz/vim-startify'
-Plug 'itchyny/lightline.vim'
+Plug 'glepnir/galaxyline.nvim'
 
-"      Editing
-Plug 'tpope/vim-commentary'
+"           Editing
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
+Plug 'Pocco81/AutoSave.nvim'
 Plug 'godlygeek/tabular'
 
-"       Syntax
+"           Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 
-"     Enhancements
+"        Enhancements
 Plug 'psliwka/vim-smoothie'
-Plug '907th/vim-auto-save'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'yamatsum/nvim-cursorline'
-Plug 'luochen1990/rainbow'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'kyazdani42/nvim-web-devicons'
 
-"        Git
+"             Git
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 
-"         Tools
+"            Tools
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
-Plug 'dkramer95/KSwitch'
-Plug 'jbyuki/instant.nvim'
 
-"         Pairs
-Plug 'jiangmiao/auto-pairs'
-Plug 'alvan/vim-closetag'
+"            Pairs
+Plug 'steelsojka/pears.nvim'
+Plug 'windwp/nvim-autopairs'
 Plug 'AndrewRadev/tagalong.vim'
 
-"   Snippets and Completion
+"    Snippets and Completion
 Plug 'mattn/emmet-vim'
-Plug 'honza/vim-snippets'
+Plug 'rafamadriz/friendly-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"--Plug 'vim-scripts/AutoComplPop'
 
 call plug#end()
 
-let g:instant_username = "spacey"
-
+" configs
 syntax enable
 set termguicolors
 set background=dark
-colorscheme tokyonight
+colorscheme dogrun
 
 filetype on
 set number
 set cursorline
 set ruler
-set mouse=a
-"set scrolloff=8
+set mouse=r
+set scrolloff=6
+set sidescrolloff=6
 set nowrap
 set lazyredraw
 
 " Cmd
 set noshowmode
+set noshowcmd
 set noerrorbells
 set cmdheight=1
 set wildmenu
@@ -94,6 +93,7 @@ set shortmess+=c
 
 " Term
 set splitbelow splitright
+set clipboard=unnamedplus,unnamed
 
 " Search
 set showmatch
@@ -110,35 +110,35 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
-" Folds       --Currently Working--
+" Folds
 set foldenable
-set foldmethod=expr  "syntax
-set foldexpr=nvim_treesitter#foldexpr()
-set foldnestmax=10
+set foldmethod=syntax
+set foldnestmax=100
 set foldlevelstart=99
 
 " Misc
-set fillchars=""
 set formatoptions-=cro
+set hidden
 set updatetime=200
 set autochdir
 
-"Backups
+" Backups
 set nobackup
 set nowritebackup
+set noswapfile
 set undofile
-"set undodir=~/.config/nvim/.tmp
 
-" Remaps
+
+" Remaps ---------------------------------
+
 let mapleader=","
 
 "au! BufWritePost $MYVIMRC source %
 nnoremap <silent> ,z  :source $MYVIMRC<cr>
 nnoremap <silent> <Leader>v :e $MYVIMRC<cr>
 
-inoremap .. <Esc>
 nnoremap <C-s> :w<CR>
-nnoremap <C-q> :wq!<CR>
+nnoremap <C-q> :wq<CR>
 nnoremap qq :q!<CR>
 
 nnoremap <Space><Space> za<CR>
@@ -146,127 +146,127 @@ nnoremap <Space><Space> za<CR>
 nnoremap o o<esc>
 nnoremap O O<esc>
 
-" Add Here
+map q <Nop>
 
-"
+map <silent> <PageUp> 1000<C-U>
+map <silent> <PageDown> 1000<C-D>
+imap <silent> <PageUp> <C-O>1000<C-U>
+imap <silent> <PageDown> <C-O>1000<C-D>
+
+noremap x "_x
+noremap X "_x
+noremap <Del> "_x
+
+inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
+inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+inoremap <expr> <Right> pumvisible() ? "<C-y>" : 
+inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
+inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
+
 
 autocmd VimResized * wincmd =
+au FocusGained,BufEnter * :checktime
 
-" Plugin Config zone
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+let &t_SI = "\e[3 q"
+let &t_EI = "\e[4 q"
 
-let g:lightline = {
-\   'colorscheme': 'tokyonight',
-\   'active': {
-\    'left' :[[ 'mode', 'paste' ],
-\             [ 'readonly', 'filename', 'modified' ]],
-\    'right':[[ 'lineinfo' ] ]
-\   },
-\ 'mode_map': {
-\ 'n' : 'N',
-\ 'i' : 'I',
-\ 'R' : 'R',
-\ 'v' : 'V',
-\ 'V' : 'VL',
-\ "\<C-v>": 'VB',
-\ 'c' : 'C',
-\ 's' : 'S',
-\ 'S' : 'SL',
-\ "\<C-s>": 'SB',
-\ 't': 'T'
-\ },
-\}
 
-" nnoremap <silent>[b :BufferLineCycleNext<CR>
-" nnoremap <silent>b] :BufferLineCyclePrev<CR>
+" Plugin Remaps
 
-" These commands will move the current buffer backwards or forwards in the bufferline
-" nnoremap <silent><mymap> :BufferLineMoveNext<CR>
-" nnoremap <silent><mymap> :BufferLineMovePrev<CR>
+noremap <Space>c :call quickmenu#toggle(0)<CR>
+nnoremap <silent>[b :BufferLineCycleNext<CR>
+nnoremap <silent>b] :BufferLineCyclePrev<CR>
+nnoremap <Leader> ,,<CR>  "Emmet
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <Leader>l :IndentBlanklineToggle<CR>
 
-" These commands will sort buffers by directory, language, or a custom criteria
-" nnoremap <silent>be :BufferLineSortByExtension<CR>
-" nnoremap <silent>bd :BufferLineSortByDirectory<CR>
-" nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+" Plugin Configs
 
-let g:rainbow_active = 0
+let g:nvimfy_header = [
+         \ '●     ___   _____  ●',
+         \ '     /   | / ___/   ',
+         \ '    / /| | \__ \    ',
+         \ '   / ___ |___/ /    ',
+         \ '  /_/  |_/____/     ',
+         \ '●                  ●',
+         \]
+let g:nvimfy_footer = [
+         \ '',
+         \ 'ver: 2.1 | lsp: coc',
+         \ '',
+         \ ' [ Happy Coding! ]',
+         \]
 
-let g:startify_custom_header = [
-        \ '●     ___   _____ ●   __  ___         __ ',
-        \ '     /   | / ___/    /  |/  /__ _____/ / ',
-        \ '    / /| | \__ \    / /|_/ / _ `/ __/ _ \',
-        \ '   / ___ |___/ /   /_/  /_/\_,_/\__/_//_/',
-        \ '  /_/  |_/____/         ',
-        \ '●                 ●     version: 1.8     ',
-        \]
+let g:startify_custom_header = startify#center(g:nvimfy_header)
+let g:startify_custom_footer = startify#center(g:nvimfy_footer)
+
 let g:startify_lists = [
-        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ { 'type': 'bookmarks', 'header': ['              Quick Access'] },
+        \ { 'type': 'commands'},
         \ ]
 let g:startify_bookmarks = [
-            \ { 'i': '~/.config/nvim/init.vim' },
-            \ { 'b': '~/.bashrc' },
-            \ { 'z': '~/.zshrc' },
-            \ '~/storage/shared/',
-            \ ]
-let g:startify_enable_special = 0
+        \ { 'i': '~/.config/nvim/init.vim' },
+        \ { 'b': '~/.bashrc' },
+        \ { 'z': '~/.zshrc' },
+        \ '~/storage/shared/',
+        \ ]
+let g:startify_commands = [
+        \ {'f': ['Files', ':Files']},           
+        \ ]
 
-let g:closetag_filenames = '*.html'
-let g:closetag_shortcut = '>'
+let g:startify_enable_special = 0
+let g:startify_padding_left = 2
+let g:startify_relative_path = 0
+ 
 
 let g:move_key_modifier = 'C'
 
+
 let g:indent_blankline_enabled = v:false
-nnoremap <Leader>l :IndentBlanklineToggle<CR>
-let g:indentLine_char = '|'
 let g:indent_blankline_filetype_exclude = ['help', 'startify']
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 
 let g:cursorline_timeout = 2000
 
+
 let g:user_emmet_leader_key=','
-nnoremap <Leader> ,,<CR>
-nnoremap <Space> ,,<CR>
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-let g:auto_save = 1
-let g:auto_save_silent = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-nnoremap <Space>f :Files<CR>
+let g:fzf_preview_window = ['up:80%:hidden', 'ctrl-/']
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-" Recomended
-" --coc-html
-" --coc-css
-" --coc-tsserver
-" --coc-json
-" --coc-sh
-" --coc-htmlhint
-" --coc-html-css-support
 
 let g:coc_global_extensions = ['coc-marketplace','coc-json']
 
+
 " Use Space + c for useful menu
 call quickmenu#reset()
-noremap <Space>c :call quickmenu#toggle(0)<CR>
 
-call quickmenu#append("# Tools", '')
-call quickmenu#append("Project Folder", 'Files', "Shows Directory and Files In PWD")
-call quickmenu#append("Buffers", 'Buffers', "Shows Directory and Files In PWD")
-call quickmenu#append("Theme", 'Colors', "Change Colorscheme Locally")
-call quickmenu#append("Maps", 'Maps', "Show Editor Mappings  --Currently Working")
-call quickmenu#append("Command Mode", ':Commands', "Runs Commands")
+call quickmenu#append("# Utility", '')
+call quickmenu#append("Files", 'Files', "Shows Directory and Files")
+call quickmenu#append("Buffers", 'Buffers', "Shows Buffers")
+call quickmenu#append("Theme", 'Colors', "Change Colorscheme")
 
-call quickmenu#append("# Misc", '')
+call quickmenu#append("# Enchant", '')
 call quickmenu#append("Indentline", "IndentBlanklineToggle", "Toggle IndentLine")
 call quickmenu#append("Rainbow", "RainbowToggle", "Toggle Rainbow")
 call quickmenu#append("Colorizer", "ColorizerToggle", "Toggle Color Previews")
-call quickmenu#append("Line Numbers", "set nonu", "Toggle Line Numbers")
-call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
+call quickmenu#append("Line Numbers", "set nonu!", "Toggle Line Numbers")
+call quickmenu#append("Spell Check", "set spell!", "Toggle Spell Check")
 
-function! BreakHabitsWindow() abort
+
+function! FloatWindow() abort
     let width = 28
     let height = 20
     let buf = nvim_create_buf(v:false, v:true)
@@ -281,14 +281,13 @@ function! BreakHabitsWindow() abort
                 \ }
     let win = nvim_open_win(buf, 1, opts)
 endfunction
-let g:plug_window = 'call BreakHabitsWindow()'
+let g:plug_window = 'call FloatWindow()'
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
 
-let g:fzf_preview_window = ['up:80%:hidden', 'ctrl-/']
 
 lua require('base')
 

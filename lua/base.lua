@@ -1,5 +1,7 @@
 require'colorizer'.setup()
 
+require('Comment').setup()
+
 require'nvim-treesitter.configs'.setup {
   --ensure_installed = "maintained", -- To Install All
   ensure_installed = { "lua", "json", "bash", "javascript" },
