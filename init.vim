@@ -188,7 +188,7 @@ let g:nvimfy_header = [
          \]
 let g:nvimfy_footer = [
          \ '',
-         \ 'ver: 2.1 | lsp: coc',
+         \ 'ver: 2.2 | lsp: coc',
          \ '',
          \ ' [ Happy Coding! ]',
          \]
