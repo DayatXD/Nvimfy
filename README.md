@@ -110,11 +110,14 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
   - my [init.vim](https://github.com/AyeSpacey/Nvimfy/wiki/My-Init.vim)
   - my [base.lua](https://github.com/AyeSpacey/Nvimfy/wiki/My-base.lua)
 ## Future Updates
+Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
 - [x] Reliable Speed
 - [ ] Native Lsp
 - [ ] All LuaScript
 - [ ] Git Integration in StatusLine 
+
+Suggestions are always welcome slightly_smiling_face!
 
 ## Credits
 
