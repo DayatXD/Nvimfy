@@ -1,4 +1,8 @@
-require('feline').setup()
+local statusline = require('statusline')
+statusline.tabline = false
+
+--require('staline').setup{}
+
 
 require('colorizer').setup()
 

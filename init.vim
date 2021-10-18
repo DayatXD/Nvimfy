@@ -19,7 +19,9 @@ Plug 'xiyaowong/nvim-transparent'
 "              UI
 Plug 'alvarosevilla95/luatab.nvim'
 Plug 'mhinz/vim-startify'
-Plug 'famiu/feline.nvim'
+Plug 'beauwilliams/statusline.lua'
+"Plug 'tamton-aquib/staline.nvim'
+
 
 "           Editing
 Plug 'mg979/vim-visual-multi'
@@ -188,7 +190,7 @@ let g:nvimfy_header = [
          \]
 let g:nvimfy_footer = [
          \ '',
-         \ 'ver: 2.2 | lsp: coc',
+         \ 'ver: 2.1 | lsp: coc',
          \ '',
          \ ' [ Happy Coding! ]',
          \]
