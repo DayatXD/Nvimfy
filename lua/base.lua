@@ -1,12 +1,11 @@
 local statusline = require('statusline')
-statusline.tabline = false
+statusline.tabline = true
 
 --require('staline').setup{}
 
-
 require('colorizer').setup()
 
-require('autosave').setup()
+-- require('autosave').setup()
 
 require('nvim-autopairs').setup({
   ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
@@ -15,7 +14,7 @@ require('Comment').setup()
 
 require'nvim-treesitter.configs'.setup {
   --ensure_installed = "maintained", -- To Install All
-  ensure_installed = { "lua", "json", "bash", "javascript" },
+  ensure_installed = { "lua", "json", "bash" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
