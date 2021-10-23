@@ -42,7 +42,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
 Plug 'numToStr/Comment.nvim'
-" Plug 'Pocco81/AutoSave.nvim'
+" Plug 'Pocco81/AutoSave.nvim' " Turn off autosave because i didn't like it
 
 "            Pairs
 Plug 'windwp/nvim-autopairs'
@@ -53,5 +53,9 @@ Plug 'windwp/nvim-ts-autotag'
 Plug 'mattn/emmet-vim'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()

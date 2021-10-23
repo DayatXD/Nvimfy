@@ -7,9 +7,9 @@ let mapleader=" "
 nnoremap <silent> ,z  :source $MYVIMRC<cr>
 nnoremap <silent> <Leader>v :e $MYVIMRC<cr>
 
+" save quit
 nnoremap <C-s> :w!<CR>
 nnoremap <C-q> :q!<CR>
-
 " nnoremap qq :q!<CR>
 
 nnoremap <Space><Space> za<CR>
@@ -39,10 +39,15 @@ autocmd VimResized * wincmd =
 au FocusGained,BufEnter * :checktime
 
 " Plugin Remaps
-
 noremap <Space>c :call quickmenu#toggle(0)<CR>
 nnoremap <silent>[b :BufferLineCycleNext<CR>
 nnoremap <silent>b] :BufferLineCyclePrev<CR>
-nnoremap <Leader> ,,<CR>  "Emmet
+nnoremap <Leader>, ,,<CR>  "Emmet
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <Leader>l :IndentBlanklineToggle<CR>
+
+" Telescope Remaps
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
