@@ -7,13 +7,14 @@
 "____________________________________
 
 so ~/.config/nvim/plugins/plug.vim
-so ~/.config/nvim/settings/mapping.vim
 so ~/.config/nvim/plugins/config/startup.vim
 so ~/.config/nvim/plugins/config/emmet.vim
 so ~/.config/nvim/plugins/config/coc.vim
 so ~/.config/nvim/plugins/config/fzf.vim
 so ~/.config/nvim/plugins/config/quickmenu.vim
+
 so ~/.config/nvim/settings/config.vim
+so ~/.config/nvim/settings/mapping.vim
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -21,7 +22,6 @@ autocmd VimEnter *
   \| endif
 
 lua require('base')
-
 lua require('bufline')
 
 "   Written with  ❤️  by AyeSpacey

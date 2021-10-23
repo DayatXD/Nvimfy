@@ -4,7 +4,7 @@ set updatetime=250 " Editor update time in ms
 set mouse=nv " enable mouse in normal and visual
 set encoding=utf-8
 
-" configs
+" Theme Settings
 lua << EOF
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = true
@@ -12,6 +12,8 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 EOF
 colorscheme tokyonight
+
+" configs
 set termguicolors
 syntax enable
 set background=dark
@@ -19,7 +21,7 @@ set background=dark
 filetype on
 set number
 set relativenumber
-" set cursorline
+set cursorline
 set ruler
 set scrolloff=6
 set sidescrolloff=6
@@ -34,7 +36,7 @@ set cmdheight=1
 set wildmenu
 set laststatus=2
 set completeopt=menuone,longest
-set pumheight=5
+set pumheight=15 " Set the pumheight to 15 because its too small :(
 set shortmess+=c
 
 " Term
@@ -66,7 +68,7 @@ set foldlevelstart=99
 set formatoptions-=cro
 set hidden
 set updatetime=200
-set autochdir
+" set autochdir " i turn it off because its bad for telescope
 
 " Backups
 set nobackup
