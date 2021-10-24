@@ -57,7 +57,7 @@
  * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
 ----
 * Do Anything Right on your 📱
-* Cross Platform
+* Cross Platform Config
   - Android  [ Termux ]
   - Windows [ Nvim-qt ]
   - Mac [ Not Tested ]
@@ -85,14 +85,9 @@ apt install neovim git nodejs clang fzf
 
 ## How To Setup
 
-Clear the ~/.config/nvim/*
+Remove the ~/.config/nvim
 ```bash
-rm -rf ~/.config/nvim/*
-```
-
-if not create one ~/.config/nvim
-```bash
-mkdir ~/.config/nvim
+rm -rf ~/.config/nvim
 ```
 
 then, 
@@ -115,21 +110,21 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 - You May be interested in my Personal config: 
   - my [coc-settings.json](https://github.com/AyeSpacey/Nvimfy/wiki/My-coc-settings.json)
-  - my [init.vim](https://github.com/AyeSpacey/Nvimfy/wiki/My-Init.vim)
-  - my [base.lua](https://github.com/AyeSpacey/Nvimfy/wiki/My-base.lua)
+
 ## Future Updates
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
 - [x] Reliable Speed
-- [ ] Git Integration in StatusLine
+- [x] Git Integration in StatusLine
 - [ ] Native Lsp
-- [ ] All LuaScript
+- [ ] All LuaScript  (will be available on seperate branch till lua becames the main)
  
 Suggestions are always welcome slightly_smiling_face!
 
 ## Credits
 
-- The Plugins I Used
+- the Plugins i used
+- Contributors
 - awesomevim
 - neovimcraft
 
