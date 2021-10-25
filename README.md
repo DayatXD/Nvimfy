@@ -90,14 +90,12 @@ Remove the ~/.config/nvim
 ```bash
 rm -rf ~/.config/nvim
 ```
-
 then, 
 ```bash
 git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
 ```
 
 Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux) my whole configuration for your Termux
-
 
 ## Showcase
 
@@ -109,7 +107,7 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/menu.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bahs.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bash.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/html.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/js.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/err.jpg)
