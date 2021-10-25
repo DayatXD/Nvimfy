@@ -100,16 +100,22 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 
 ## Showcase
-- Old
 
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/git.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/startify.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/buffer.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/status.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/tele.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/gits.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/menu.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bahs.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/html.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/js.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/err.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/ocean.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/deus.jpg)
 
 - You May be interested in my Personal config: 
   - Uploading Soon
@@ -122,6 +128,7 @@ Nvimfy is in its infancy and there's still a lot to be done. Here's the currentl
 - [ ] Native Lsp
 - [ ] All LuaScript  (will be available on seperate branch till lua becames the main)
  
+Thinking of -
 - Switch to Dashboard
 - Switch to Native LSP
 - Switch to Paq
