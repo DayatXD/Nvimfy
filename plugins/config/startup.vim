@@ -28,13 +28,12 @@ let g:startify_lists = [
         \ { 'type': 'commands'},
         \ ]
 let g:startify_bookmarks = [
-        \ { 'z': '~/.zshrc' },
-        \ { 'i': '~/.config/nvim/init.vim' },
-        \ '~/storage/shared/',
+        \ { 'b': '~/.bashrc' },
+        \ { 'i': '~/.config/nvim/settings/config.vim' },
         \ ]
 let g:startify_commands = [
-        \ {'f': ['Files', ':Files']},
-        \ {'c': ['Colors', ':Colors']},
+        \ {'f': ['Files', ':Telescope find_files']},
+        \ {'c': ['Colors', ':Telescope colorscheme']},
         \ ]
 
 let g:startify_enable_special = 0
