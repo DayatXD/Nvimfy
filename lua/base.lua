@@ -1,7 +1,6 @@
 -- Status-line
-require('statusline').setup({
-  tabline = false
-})
+local statusline = require('statusline')
+statusline.tabline = false
 
 -- Css-Colorizer
 require('colorizer').setup()
