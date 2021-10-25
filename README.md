@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h6 align="center">V-2.2</h6>
+<h6 align="center">V-2.4</h6>
 
 <div align="center">
 
