@@ -8,10 +8,6 @@
 
 "Vim Source"
 so ~/.config/nvim/plugins/plug.vim
-so ~/.config/nvim/plugins/config/startup.vim
-so ~/.config/nvim/plugins/config/emmet.vim
-so ~/.config/nvim/plugins/config/coc.vim
-so ~/.config/nvim/plugins/config/quickmenu.vim
 so ~/.config/nvim/settings/config.vim
 so ~/.config/nvim/settings/mapping.vim
 so ~/.config/nvim/settings/custom.vim
@@ -20,6 +16,11 @@ so ~/.config/nvim/settings/custom.vim
 lua require('base')
 lua require('bufline')
 lua require('syntax')
+
+"Loads All Configs from plugins/config folder
+for f in split(glob('~/vimfiles/vimrc.d/*.vim'), '\n')
+    exe 'source' f
+endfor
 
 "Auto install Missing Plugins"
 autocmd VimEnter *
