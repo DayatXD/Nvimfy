@@ -21,7 +21,7 @@ set background=dark
 filetype on
 set number
 set relativenumber
-set cursorline
+"set cursorline
 set ruler
 set scrolloff=6
 set sidescrolloff=6

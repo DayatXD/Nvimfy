@@ -39,7 +39,7 @@
 
 ## Key Features
 
-* AutoSave - Make changes, See changes
+* Auto-Save - Make changes, See changes
 * Syntax highlighting - Native & Treesitter
 * Code Intellisense & AutoCompletion - Much Like Vs-Code
 * Dark ColorSchemes - EyeCandy for Eyes
@@ -48,7 +48,8 @@
 * Robust Plugins (39)
 * Native Speed - Won't Slow Down
 ----
- * Find files using FZF
+ * Find files using Telescopes
+ * Advanced Utility using Telescopes
  * Quick access Commands Using Quickmenu         ( Space + c )
  * Color Highlighter using nvim-colorizer
  * Easily Write html using emmet                 ( , + , )
@@ -71,7 +72,7 @@
 **NOTE** I recommend installing `lua` & `vim` for autocomplete in `lua & vim configs`
 
 ## Prerequisites
-In Order To Clone And Run This Perfectly fine you'll need installed on your device. From your command line.
+In Order To Clone And Use This Perfectly, you'll need to install these on your device. From your command line.
 
 * `neovim`  ( Ofcourse )
 
@@ -99,6 +100,8 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 
 
 ## Showcase
+- Old
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/git.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/menu.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color.jpg)
@@ -109,8 +112,8 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
 
 - You May be interested in my Personal config: 
-  - my [coc-settings.json](https://github.com/AyeSpacey/Nvimfy/wiki/My-coc-settings.json)
-
+  - Uploading Soon
+ 
 ## Future Updates
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
@@ -119,6 +122,10 @@ Nvimfy is in its infancy and there's still a lot to be done. Here's the currentl
 - [ ] Native Lsp
 - [ ] All LuaScript  (will be available on seperate branch till lua becames the main)
  
+- Switch to Dashboard
+- Switch to Native LSP
+- Switch to Paq
+
 Suggestions are always welcome slightly_smiling_face!
 
 ## Credits
@@ -135,7 +142,7 @@ Suggestions are always welcome slightly_smiling_face!
 
 ## You may also like...
 
-- [Termify](https://github.com/AyeSpacey/Termify-Termux)  - EyeCandy For your Shell
+- [Termify](https://github.com/AyeSpacey/Termify)  - EyeCandy For your Shell
 
 ## Support
 #### Contributions, issues, and feature requests are welcome!

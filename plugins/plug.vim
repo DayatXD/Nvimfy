@@ -8,11 +8,10 @@ Plug 'Avimitin/neovim-deus'
 Plug 'xiyaowong/nvim-transparent'
 
 "              UI
-Plug 'alvarosevilla95/luatab.nvim'
+" Plug 'alvarosevilla95/luatab.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'beauwilliams/statusline.lua'
 Plug 'akinsho/bufferline.nvim'
-"Plug 'tamton-aquib/staline.nvim'
 
 "           Editing
 Plug 'mg979/vim-visual-multi'
@@ -39,7 +38,6 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 "            Tools
-Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/quickmenu.vim'
 Plug 'numToStr/Comment.nvim'
 " Plug 'Pocco81/AutoSave.nvim' " Turn off autosave because i didn't like it

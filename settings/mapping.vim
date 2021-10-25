@@ -17,24 +17,28 @@ nnoremap <Space><Space> za<CR>
 nnoremap o o<esc>
 nnoremap O O<esc>
 
-map q <Nop>
+" Disables Recording Macros
+map q <Nop> 
 
+" Do not Go Below the Line
 map <silent> <PageUp> 1000<C-U>
 map <silent> <PageDown> 1000<C-D>
 imap <silent> <PageUp> <C-O>1000<C-U>
 imap <silent> <PageDown> <C-O>1000<C-D>
 
+" Prevent x From Overiding Paste
 noremap x "_x
 noremap X "_x
 noremap <Del> "_x
 
+" Better Completion
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 inoremap <expr> <Right> pumvisible() ? "<C-y>" :  "<Right>"
 inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
 
-
+"Some Goodvibes
 autocmd VimResized * wincmd =
 au FocusGained,BufEnter * :checktime
 
