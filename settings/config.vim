@@ -21,7 +21,7 @@ set background=dark
 filetype on
 set number
 set relativenumber
-"set cursorline
+set cursorline
 set ruler
 set scrolloff=6
 set sidescrolloff=6
@@ -68,7 +68,6 @@ set foldlevelstart=99
 set formatoptions-=cro
 set hidden
 set updatetime=200
-" set autochdir " i turn it off because its bad for telescope
 
 " Backups
 set nobackup
