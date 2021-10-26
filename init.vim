@@ -10,7 +10,7 @@
 so ~/.config/nvim/plugins/plug.vim
 so ~/.config/nvim/settings/config.vim
 so ~/.config/nvim/settings/mapping.vim
-so ~/.config/nvim/settings/custom.vim
+so ~/.config/nvim/settings/user.vim
 
 "Lua Source"
 lua require('base')
@@ -18,7 +18,7 @@ lua require('bufline')
 lua require('syntax')
 
 "Loads All Configs from plugins/config folder
-for f in split(glob('~/vimfiles/vimrc.d/*.vim'), '\n')
+for f in split(glob('~/config/nvim/plugins/config/*.vim'), '\n')
     exe 'source' f
 endfor
 
