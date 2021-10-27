@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugins/plugged')
 
 "         Color Schemes
 Plug 'folke/tokyonight.nvim'

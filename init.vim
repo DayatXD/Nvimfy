@@ -6,6 +6,9 @@
 "●                 ●        
 "____________________________________
 
+" Speed Up Nvim"
+lua require('utils.disabled')
+
 "Vim Source"
 so ~/.config/nvim/plugins/plug.vim
 so ~/.config/nvim/settings/config.vim
