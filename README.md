@@ -142,6 +142,7 @@ Suggestions are always welcome slightly_smiling_face!
 
 ## Related
 
+- [Doom-Nvim](https://github.com/NTBBloodbath/doom-nvim)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [Nvchad](https://github.com/NvChad/NvChad)
 
