@@ -1,14 +1,21 @@
-call plug#begin('~/.config/nvim/plugins/plugged')
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+call plug#begin('~/.config/nvim/plugged')
 
 "         Color Schemes
 Plug 'folke/tokyonight.nvim'
-Plug 'EdenEast/nightfox.nvim'
-" Plug 'wadackel/vim-dogrun'
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'Mangeshrex/uwu.vim'
+Plug 'wadackel/vim-dogrun'
 Plug 'Avimitin/neovim-deus'
 Plug 'xiyaowong/nvim-transparent'
 
 "              UI
-" Plug 'alvarosevilla95/luatab.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'beauwilliams/statusline.lua'
 Plug 'akinsho/bufferline.nvim'
@@ -47,13 +54,28 @@ Plug 'windwp/nvim-autopairs'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'windwp/nvim-ts-autotag'
 
-"    Snippets and Completion
-Plug 'rafamadriz/friendly-snippets'
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-
-" telescope
+"          Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+"            LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'onsails/lspkind-nvim'
+
+"         Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+
+"       Completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-calc'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'octaltree/cmp-look'
+Plug 'ray-x/cmp-treesitter'
+Plug 'f3fora/cmp-spell'
 
 call plug#end()

@@ -123,13 +123,12 @@ Nvimfy is in its infancy and there's still a lot to be done. Here's the currentl
 
 - [x] Reliable Speed
 - [x] Git Integration in StatusLine
-- [ ] Native Lsp
-- [ ] All LuaScript  (will be available on seperate branch till lua becames the main)
+- [x] Native Lsp
+- [ ] All LuaScript
  
 Thinking of -
+- Switch to Packer
 - Switch to Dashboard
-- Switch to Native LSP
-- Switch to Paq
 
 Suggestions are always welcome slightly_smiling_face!
 
