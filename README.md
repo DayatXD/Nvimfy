@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h6 align="center">V-2.4</h6>
+<h6 align="center">V-2.5</h6>
 
 <div align="center">
 
@@ -24,7 +24,7 @@
 
 </div>
 
-<h4 align="center">A minimal and robust Neovim configuration, Built For Your Android Screens For Termux That Wont Let You DOWN.</h4>
+<h4 align="center">A minimal and robust Neovim configuration, Built For Any Screens That Wont Let You DOWN.</h4>
 
 
 <p align="center">
@@ -40,12 +40,12 @@
 ## Key Features
 
 * Auto-Save - Make changes, See changes
-* Syntax highlighting - Native & Treesitter
-* Code Intellisense & AutoCompletion - Much Like Vs-Code
+* Syntax highlighting - Treesitter
+* Native LSP & AutoCompletion
 * Dark ColorSchemes - EyeCandy for Eyes
 * Smooth Scrolling
 
-* Robust Plugins (39)
+* Robust Plugins
 * Native Speed - Won't Slow Down
 ----
  * Find files using Telescopes
@@ -57,31 +57,31 @@
  * Git Integretion Using Fugitive & Signify
  * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
 ----
-* Do Anything Right on your 📱
+
 * Cross Platform Config
-  - Android  [ Termux ]
-  - Windows [ Nvim-qt ]
-  - Mac [ Not Tested ]
+  - Void Linux [ urxvt ]
+  - Android  [ termux ]
+  - Windows [ nvim-qt ]
+  - Mac [..]
 
 ## Install Language support
 
-- Enter `:CocInstall` followed by `<TAB>` to see your options for LSP
+- Enter `:LspInstall` followed by `<TAB>` to see your options for LSP
 
 - Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting
 
 **NOTE** I recommend installing `lua` & `vim` for autocomplete in `lua & vim configs`
 
 ## Prerequisites
-In Order To Clone And Use This Perfectly, you'll need to install these on your device. From your command line.
 
 * `neovim`  ( Ofcourse )
 
-* `git`     ( For Installing Plugins Using vim-plug)
-* `nodejs`  (For Lsp AutoCompletion )
-* `clang`   (For Treesitter Syntax Highlighting)
+* `git`     ( vim-plug )
+* `nodejs`  ( Lsp )
+* `clang`   ( Treesitter Syntax Highlighting)
 
 ```bash
-apt install neovim git nodejs clang fzf
+apt install neovim git nodejs clang
 ```
 
 ## How To Setup
@@ -95,7 +95,7 @@ then,
 git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
 ```
 
-Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux) my whole configuration for your Termux
+Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
 
 ## Showcase
 
@@ -115,27 +115,22 @@ Note: If you want to make your PROMPT & terminal more useful Use [Termify](https
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/deus.jpg)
 
-- You May be interested in my Personal config: 
-  - Uploading Soon
- 
+
 ## Future Updates
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
 - [x] Reliable Speed
 - [x] Git Integration in StatusLine
 - [x] Native Lsp
-- [ ] All LuaScript
- 
-Thinking of -
-- Switch to Packer
-- Switch to Dashboard
+- [ ] Switch to Packer
+- [ ] Everything lua
 
 Suggestions are always welcome slightly_smiling_face!
 
 ## Credits
 
 - the Plugins i used
-- Contributors
+- contributors
 - awesomevim
 - neovimcraft
 
