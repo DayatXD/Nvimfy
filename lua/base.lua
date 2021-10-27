@@ -2,6 +2,9 @@
 local statusline = require('statusline')
 statusline.tabline = false
 
+-- GitSigns
+require('gitsigns').setup()
+
 -- Css-Colorizer
 require('colorizer').setup()
 

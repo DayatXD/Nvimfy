@@ -54,7 +54,7 @@
  * Color Highlighter using nvim-colorizer
  * Easily Write html using emmet                 ( , + , )
  * Better Snippets
- * Git Integretion Using Fugitive & Signify
+ * Git Integretion Using Fugitive & GitSign
  * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
 ----
 

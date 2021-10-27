@@ -40,7 +40,7 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'kyazdani42/nvim-web-devicons'
 
 "             Git
-Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 
 "            Tools
