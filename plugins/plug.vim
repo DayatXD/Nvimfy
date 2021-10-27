@@ -5,7 +5,11 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 
-call plug#begin('~/.config/nvim/plugged')
+
+
+
+call plug#begin('~/.config/nvim/plugins/plugged')
+
 
 "         Color Schemes
 Plug 'folke/tokyonight.nvim'
