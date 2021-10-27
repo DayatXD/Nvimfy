@@ -48,9 +48,9 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'windwp/nvim-ts-autotag'
 
 "    Snippets and Completion
-Plug 'mattn/emmet-vim'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'

@@ -19,6 +19,7 @@ so ~/.config/nvim/settings/user.vim
 lua require('base')
 lua require('bufline')
 lua require('syntax')
+lua require('lsp')
 
 "Loads All Configs from plugins/config folder
 for f in split(glob('~/config/nvim/plugins/config/*.vim'), '\n')
