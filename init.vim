@@ -7,13 +7,14 @@
 "____________________________________
 
 " Speed Up Nvim"
-lua require('utils.disabled')
+" lua require('utils.disabled')
 
 "Vim Source"
 so ~/.config/nvim/plugins/plug.vim
 so ~/.config/nvim/settings/config.vim
 so ~/.config/nvim/settings/mapping.vim
 so ~/.config/nvim/settings/user.vim
+so ~/.config/nvim/plugins/config/startup.vim
 
 "Lua Source"
 lua require('base')
@@ -22,7 +23,7 @@ lua require('syntax')
 lua require('lsp')
 
 "Loads All Configs from plugins/config folder
-for f in split(glob('~/config/nvim/plugins/config/*.vim'), '\n')
+for f in split(glob('~/.config/nvim/plugins/config/*.vim'), '\n')
     exe 'source' f
 endfor
 

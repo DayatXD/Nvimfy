@@ -48,3 +48,21 @@ let g:indent_blankline_filetype_exclude = ['help', 'startify']
 
 
 let g:cursorline_timeout = 2000
+
+
+function! FloatWindow() abort
+    let width = 30
+    let height = 20
+    let buf = nvim_create_buf(v:false, v:true)
+    let ui = nvim_list_uis()[0]
+    let opts = {'relative': 'editor',
+                \ 'width': width,
+                \ 'height': height,
+                \ 'col': (ui.width/2) - (width/2),
+                \ 'row': (ui.height/2) - (height/2),
+                \ 'anchor': 'NW',
+                \ 'style': 'minimal',
+                \ }
+    let win = nvim_open_win(buf, 1, opts)
+endfunction
+let g:plug_window = 'call FloatWindow()'

@@ -24,7 +24,7 @@ require('bufferline').setup {
     show_buffer_close_icons = false,
     show_close_icon = true,
 
-    separator_style = "slant" | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thin",
 
      -- diagnostics = false | "nvim_lsp" | "coc",
     -- diagnostics_update_in_insert = false,

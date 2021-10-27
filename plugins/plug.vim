@@ -4,12 +4,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
-
-
-
 call plug#begin('~/.config/nvim/plugins/plugged')
-
 
 "         Color Schemes
 Plug 'folke/tokyonight.nvim'
