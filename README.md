@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="#"><img src="https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/nvimfy.png" alt="Nvimfy" /></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/nvimfy1.png" alt="Nvimfy" /></a>
   <br>
   Nvimfy
   <br>
