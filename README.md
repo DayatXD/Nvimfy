@@ -87,7 +87,7 @@ apt install neovim git nodejs clang
 ## How To Setup
 
 ```bash
-wget https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
+curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
 
 Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
@@ -117,10 +117,11 @@ Nvimfy is in its infancy and there's still a lot to be done. Here's the currentl
 - [x] Reliable Speed
 - [x] Git Integration in StatusLine
 - [x] Native Lsp
+- [X] Install Script
 - [ ] Switch to Packer
 - [ ] Everything lua
 
-Suggestions are always welcome slightly_smiling_face!
+Suggestions are always welcome :slightly_smiling_face:!
 
 ## Credits
 
