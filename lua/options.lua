@@ -5,17 +5,30 @@ local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
 
 --configs
+vim.o.lazyredraw = true -- Don't redraw easily
+vim.o.ttyfast = true -- Performance related
+vim.o.updatetime = 250 -- Editor update time in ms
+vim.o.mouse = 'nv' -- enable mouse in normal and visual
+vim.o.encoding ='utf-8'
+
+-- Theme Settings
+g.tokyonight_style = "night"
+g.tokyonight_italic_functions = true
+g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+cmd([[colorscheme tokyonight]])
 
 g.mapleader = ','
 
 opt.termguicolors = true
 opt.background = 'dark'
-cmd 'colorscheme dogrun'
 
+opt.syntax = 'on'
+vim.o.filetype = 'on'
 opt.number = true
 opt.cursorline = true
 opt.ruler = true
-opt.mouse = 'r'
+opt.mouse = 'nv'
 opt.scrolloff = 6
 opt.sidescrolloff = 6
 opt.wrap = false
@@ -29,7 +42,7 @@ opt.cmdheight = 1
 opt.wildmenu = true
 opt.laststatus = 2
 opt.completeopt = {'menuone','longest'}
-opt.pumheight = 4
+opt.pumheight = 15
 opt.shortmess = opt.shortmess + 'c'
 opt.statusline = "%f %m %w %= %l:%c"
 
@@ -64,8 +77,7 @@ opt.listchars = {tab = '▸ ', trail = '·'}
 opt.formatoptions = opt.formatoptions - 'cro'
 opt.hidden = true
 opt.timeoutlen = 10
-opt.updatetime = 100
-opt.autochdir = true
+opt.autochdir = false
 
 --Backups
 opt.backup = false
