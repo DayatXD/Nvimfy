@@ -6,15 +6,11 @@
   <br>
 </h1>
 
-<h6 align="center">V-2.5</h6>
-
 <div align="center">
 
-[![Vimscript](https://img.shields.io/badge/Made%20with%20Vimscript-darkgreen.svg?style=for-the-badge&logo=vim)](https://vim.org)
 [![Lua](https://img.shields.io/badge/Made%20with%20Lua-red.svg?style=for-the-badge&logo=lua)](https://lua.org)
 
 </div>
-
 
 <div align="center">
 
@@ -118,8 +114,8 @@ Nvimfy is in its infancy and there's still a lot to be done. Here's the currentl
 - [x] Git Integration in StatusLine
 - [x] Native Lsp
 - [X] Install Script
-- [ ] Switch to Packer
-- [ ] Everything lua
+- [x] Switch to Packer
+- [x] Everything lua
 
 Suggestions are always welcome :slightly_smiling_face:!
 
