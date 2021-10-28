@@ -29,7 +29,7 @@ g.startify_lists = {
          }
 g.startify_bookmarks = {
          { b = '~/.bashrc' },
-         { i = '~/.config/nvim/settings/config.vim' }
+         { i = '~/.config/nvim/lua/custom/user.lua' }
          }
 g.startify_commands = {
          { f = {'Files', ':Telescope find_files'}},
