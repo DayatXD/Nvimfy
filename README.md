@@ -86,13 +86,8 @@ apt install neovim git nodejs clang
 
 ## How To Setup
 
-Remove the ~/.config/nvim
 ```bash
-rm -rf ~/.config/nvim
-```
-then, 
-```bash
-git clone https://github.com/AyeSpacey/Nvimfy ~/.config/nvim
+wget https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
 
 Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
