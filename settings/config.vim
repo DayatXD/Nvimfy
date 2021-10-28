@@ -74,3 +74,5 @@ set nobackup
 set nowritebackup
 set noswapfile
 set undofile
+
+au TextYankPost * silent! lua vim.highlight.on_yank({higroup = "Search", timeout = 2200})

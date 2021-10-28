@@ -23,6 +23,8 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'
+Plug 'numToStr/Comment.nvim'
+" Plug 'Pocco81/AutoSave.nvim' " Turn off autosave because i didn't like it
 
 "           Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -33,7 +35,6 @@ Plug 'plasticboy/vim-markdown'
 "        Enhancements
 Plug 'psliwka/vim-smoothie'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'machakann/vim-highlightedyank'
 Plug 'yamatsum/nvim-cursorline'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'p00f/nvim-ts-rainbow'
@@ -45,8 +46,7 @@ Plug 'tpope/vim-fugitive'
 
 "            Tools
 Plug 'skywind3000/quickmenu.vim'
-Plug 'numToStr/Comment.nvim'
-" Plug 'Pocco81/AutoSave.nvim' " Turn off autosave because i didn't like it
+Plug 'akinsho/toggleterm.nvim'
 
 "            Pairs
 Plug 'windwp/nvim-autopairs'
