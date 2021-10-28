@@ -41,6 +41,5 @@ imap <silent> <PageDown> <C-O>1000<C-D>
 --Plugins Mappings
 
 map('', '<Space>c', ':call quickmenu#toggle(0)<CR>')
-map('n', '<Leader>', ',,<CR>')
 map('n', '<silent><C-p>', 'Telescope find_files')
 map('n', '<Leader>l', ':IndentBlanklineToggle<CR>')
