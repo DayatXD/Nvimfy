@@ -2,6 +2,7 @@
 local statusline = require('statusline')
 statusline.tabline = false
 
+
 -- GitSigns
 require('gitsigns').setup {
   signcolumn = false,  -- Toggle with `:Gitsigns toggle_signs`
@@ -11,16 +12,26 @@ require('gitsigns').setup {
 
 }
 
+
 -- Css-Colorizer
 require('colorizer').setup()
 
+
 -- Auto-save
 -- require('autosave').setup()
+
 
 -- Auto-Pairs
 require('nvim-autopairs').setup({
   ignored_next_char = "[%w%.]" -- ignore alphanumeric, `.`
 })
 
+
 -- Comment
 require('Comment').setup()
+
+require('plugins.ui.core')
+require('plugins.bufferline')
+require('plugins.lsp.lsp')
+require('plugins.lsp.completion')
+require('plugins.syntax')
