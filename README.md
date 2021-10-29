@@ -17,18 +17,16 @@
 <h4 align="center">A minimal and robust Neovim configuration, Built For Any Screens.</h4>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#prerequisites">Prerequisites</a> •
-  <a href="#how-to-setup">Setup</a> •
+  <a href="#features">Features</a> •
+  <a href="#setup">Install</a> •
   <a href="#showcase">Showcase</a> •
   <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
   <a href="#support">Contribute</a>
 </p>
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/head.png)
 
-## Screenshots
+## Showcase
 
 <details><summary> <b>(Click to expand!)</b></summary>
 -- Taken On Termux
@@ -58,25 +56,27 @@
 * Dark ColorSchemes - EyeCandy for Eyes
 * Smooth Scrolling
 * Robust Plugins
-* Native Speed - Won't Slow Down
+* Native Speed
+
+- Plugins :
 ----
  * Find files using Telescopes
  * Advanced Utility using Telescopes
- * Quick access Commands Using Quickmenu         ( Space + c )
+ * Quick access Commands Using Quickmenu                 ( Space + c )
  * Color Highlighter using nvim-colorizer
- * Easily Write html using emmet                 ( , + , )
+ * Easily Write html using emmetls                           ( , + , )
  * Better Snippets
  * Git Integretion Using Fugitive & GitSign
  * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
 ----
-* Cross Platform Config
+
+* Tested on:
   - Void Linux [ urxvt ]
   - Android  [ termux ]
   - Windows [ nvim-qt ]
-  - Mac [..]
 
-## Install
-#### Requirements
+## Setup
+- Requirements
 * `neovim`
 * `git`
 * `nodejs`     ( Lsp )
@@ -84,7 +84,7 @@
 ```bash
 apt install neovim git nodejs clang
 ``` 
--- Install
+- Install
 ```bash
 curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
@@ -114,6 +114,7 @@ Suggestions are always welcome :slightly_smiling_face:!
 - contributors
  - DayatXD
  - the-noob-coder69
+
 - maintainers of plugins used by nvimfy
 - awesomevim
 - neovimcraft
