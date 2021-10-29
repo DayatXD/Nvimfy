@@ -33,7 +33,7 @@
   <a href="#support">Contribute</a>
 </p>
 
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/main.png)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/head.png)
 
 ## Key Features
 
