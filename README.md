@@ -33,6 +33,8 @@
   <a href="#support">Contribute</a>
 </p>
 
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/main.png)
+
 ## Key Features
 
 * Auto-Save - Make changes, See changes
