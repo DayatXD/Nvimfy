@@ -89,9 +89,9 @@ apt install neovim git nodejs clang
 curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
 
-## Install Language support
-- Enter `:LspInstall` followed by `<TAB>` to see your options for LSP.
-- Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting.
+##### Installing Language support
+Enter `:LspInstall` followed by `<TAB>` to see your options for LSP.
+Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting.
 
 **NOTE** I recommend installing `sumneko_lua` & `vimls` for autocomplete in `lua & vim configs`
 
@@ -111,13 +111,13 @@ Suggestions are always welcome :slightly_smiling_face:!
 
 ## Credits
 
-- contributors
- - DayatXD
- - the-noob-coder69
+* contributors
+  - DayatXD
+  - the-noob-coder69
 
-- maintainers of plugins used by nvimfy
-- awesomevim
-- neovimcraft
+* maintainers of plugins used by nvimfy
+* awesomevim
+* neovimcraft
 
 ## Inspiration
 
