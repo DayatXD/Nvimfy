@@ -6,40 +6,62 @@ end
 
 local cmd = vim.cmd
 
+---------------------
 -- Mappings Goes Here
+---------------------
 
-map('n', ',z', ':source $MYVIMRC<cr>')
-map('n', '<Leader>v', ':e $MYVIMRC<cr>')
-
-
+-- Save And Exit
 map('n', '<C-s>', ':w<CR>')
 map('n', '<C-q>', ':wq<CR>')
 
-
-map('n', '<Space><Space>', 'za<CR>')
-
+-- Do Not Insert In New Line
 map('n', 'o', 'o<esc>')
 map('n', 'O', 'O<esc>')
 
+-- Prevent x From Overiding Paste
 map('', 'x', '"_x')
 map('', 'X', '"_x')
 map('', '<Del>', '"_x')
 
-cmd([[
+--nnoremap qq :q!<CR>
+--vim.api.nvim_set_keymap('n', 'qq', ':q!<CR>', {noremap = true})
+--map('n', 'qq', ':q!<CR>')
 
-map q <Nop>
+---------------------
+-- Plugins Mappings
+---------------------
 
-" nnoremap qq :q!<CR>
+map('n', '<C-f>', ':Telescope find_files<CR>', {silent = true})
 
-map <silent> <PageUp> 1000<C-U>
-map <silent> <PageDown> 1000<C-D>
-imap <silent> <PageUp> <C-O>1000<C-U>
-imap <silent> <PageDown> <C-O>1000<C-D>
+map('n', '<C-Right>', ':BufferLineCycleNext<CR>', {silent = true})
+map('n', '<C-Left>', ':BufferLineCyclePrev<CR>', {silent = true})
 
-]])
+map('n', '<C-a>', ':IndentBlanklineToggle<CR>', {silent = true})
 
---Plugins Mappings
+map('', '<C-c>', ':call quickmenu#toggle(0)<CR>', {silent = true})
 
-map('', '<Space>c', ':call quickmenu#toggle(0)<CR>')
-map('n', '<silent><C-p>', 'Telescope find_files')
-map('n', '<Leader>l', ':IndentBlanklineToggle<CR>')
+-- Telescope
+--nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+--nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+--nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+--nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+---------------------
+-- Improvements
+---------------------
+
+-- Disables Recording Macros
+vim.api.nvim_set_keymap('', 'q', '<Nop>', {noremap = false})
+
+-- Do not Go Below the Line
+vim.api.nvim_set_keymap('', '<PageUp>', '1000<C-U>', {noremap = false, silent = true})
+vim.api.nvim_set_keymap('', '<PageDown>', '1000<C-D>', {noremap = false, silent = true})
+vim.api.nvim_set_keymap('i', '<PageUp>', '<C-O>1000<C-U>', {noremap = false, silent = true})
+vim.api.nvim_set_keymap('i', '<PageDown>', '<C-O>1000<C-D>', {noremap = false, silent = true})
+
+-- Better Completion
+-- inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
+-- inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+-- inoremap <expr> <Right> pumvisible() ? "<C-y>" :  "<Right>"
+-- inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
+-- inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
