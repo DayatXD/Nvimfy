@@ -23,6 +23,10 @@ map('', 'x', '"_x')
 map('', 'X', '"_x')
 map('', '<Del>', '"_x')
 
+-- map ; to :
+map('n', ';', ':')
+map('v', ';', ':')
+
 --nnoremap qq :q!<CR>
 --vim.api.nvim_set_keymap('n', 'qq', ':q!<CR>', {noremap = true})
 --map('n', 'qq', ':q!<CR>')
@@ -50,6 +54,9 @@ map('', '<C-c>', ':call quickmenu#toggle(0)<CR>', {silent = true})
 -- Improvements
 ---------------------
 
+-- Yanks all Lines
+vim.api.nvim_set_keymap('n', '<C-a>', ':%y<CR>', {noremap = false, silent=true})
+
 -- Disables Recording Macros
 vim.api.nvim_set_keymap('', 'q', '<Nop>', {noremap = false})
 
@@ -58,6 +65,11 @@ vim.api.nvim_set_keymap('', '<PageUp>', '1000<C-U>', {noremap = false, silent = 
 vim.api.nvim_set_keymap('', '<PageDown>', '1000<C-D>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('i', '<PageUp>', '<C-O>1000<C-U>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('i', '<PageDown>', '<C-O>1000<C-D>', {noremap = false, silent = true})
+
+--vim.api.nvim_set_keymap('n', '<up>', '<C-w><up>', {noremap = false})
+--vim.api.nvim_set_keymap('n', '<down>', '<C-w><down>', {noremap = false})
+--vim.api.nvim_set_keymap('n', '<left>', '<C-w><left>', {noremap = false})
+--vim.api.nvim_set_keymap('n', '<right>', '<C-w><right>', {noremap = false})
 
 -- Better Completion
 -- inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
