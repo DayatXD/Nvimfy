@@ -24,24 +24,36 @@
   <a href="#support">Contribute</a>
 </p>
 
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.png)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.jpg)
 
 ## Showcase
 
 <details><summary> <b>(Click to expand!)</b></summary>
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/startify.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color1.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/comp.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/css.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bash.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/term.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/quickmenu.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color2.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color4.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color5.jpg)
+
 </details>
 
 ## Features
