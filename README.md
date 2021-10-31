@@ -24,29 +24,24 @@
   <a href="#support">Contribute</a>
 </p>
 
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/head.png)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.png)
 
 ## Showcase
 
 <details><summary> <b>(Click to expand!)</b></summary>
--- Taken On Termux
-
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/startify.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/buffer.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/status.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/tele.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/gits.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/menu.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color1.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/comp.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/css.jpg)
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bash.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/html.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/js.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/err.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/ocean.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/dogrun.jpg)
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/deus.jpg)
-
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/term.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/quickmenu.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color2.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color4.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color5.jpg)
 </details>
 
 ## Features
@@ -84,18 +79,18 @@
 ```bash
 apt install neovim git nodejs clang
 ``` 
-- Install
+## Install
 ```bash
 curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
 
-##### Installing Language support
+- Installing Language support
 Enter `:LspInstall` followed by `<TAB>` to see your options for LSP.
 Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting.
 
 **NOTE** I recommend installing `sumneko_lua` & `vimls` for autocomplete in `lua & vim configs`
 
-Note: If you want to make your PROMPT & terminal more useful Use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
+Note: If you want to make your PROMPT & terminal simple and fast use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
 
 ## Future Updates
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
