@@ -38,6 +38,8 @@
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
 
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
+
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/css.jpg)
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/bash.jpg)
