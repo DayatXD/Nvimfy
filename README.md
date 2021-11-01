@@ -25,6 +25,7 @@
 </p>
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color3.jpg)
+![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/treesit.jpg)
 
 ## Showcase
 
@@ -35,8 +36,6 @@
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/color1.jpg)
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/comp.jpg)
-
-![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
 
 ![Prew](https://raw.githubusercontent.com/AyeSpacey/repo-conf/main/nvimfy/telescope.jpg)
 
@@ -59,85 +58,61 @@
 </details>
 
 ## Features
+* Minimal Configurations for Focused Devs
 * Auto-Save - Make changes, See changes
-* Syntax highlighting - Treesitter
-* Native LSP & AutoCompletion
+* Syntax highlighting
+* LSP & AutoCompletion
 * Dark ColorSchemes - EyeCandy for Eyes
-* Smooth Scrolling
+* Better Snippets
 * Robust Plugins
 * Native Speed
 
-- Plugins :
 ----
+- Plugins :
  * Find files using Telescopes
  * Advanced Utility using Telescopes
- * Quick access Commands Using Quickmenu                 ( Space + c )
+ * Quick access Commands Using Quickmenu                ( Space + c )
  * Color Highlighter using nvim-colorizer
- * Easily Write html using emmetls                           ( , + , )
- * Better Snippets
+ * Easily Write html using emmetls                          ( , + , )
  * Git Integretion Using Fugitive & GitSign
- * Sublime type Multi Cursor Support             ( Ctrl + arrow_keys )
+ * Sublime type Multi Cursor Support            ( Ctrl + arrow_keys )
 ----
 
-* Tested on:
-  - Void Linux [ urxvt ]
-  - Android  [ termux ]
-  - Windows [ nvim-qt ]
-
-## Setup
-- Requirements
-* `neovim`
-* `git`
-* `nodejs`     ( Lsp )
-* `clang`   ( Syntax )
-```bash
-apt install neovim git nodejs clang
-``` 
 ## Install
 ```bash
 curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
 ```
 
 - Installing Language support
-Enter `:LspInstall` followed by `<TAB>` to see your options for LSP.
-Enter `:TSInstall` followed by `<TAB>` to see your options for syntax highlighting.
-
-**NOTE** I recommend installing `sumneko_lua` & `vimls` for autocomplete in `lua & vim configs`
-
-Note: If you want to make your PROMPT & terminal simple and fast use [Termify](https://github.com/AyeSpacey/Termify-Termux). 
+`:LspInstall` followed by `<TAB>`
+`:TSInstall` followed by `<TAB>`
 
 ## Future Updates
 Nvimfy is in its infancy and there's still a lot to be done. Here's the currently planned features:
 
-- [x] Reliable Speed
 - [x] Gi Integration in StatusLine
 - [x] Native Lsp
-- [X] Install Script
-- [x] Switch to Packer
-- [x] Everything lua
+- [x] Port to lua
 
 Suggestions are always welcome :slightly_smiling_face:!
 
 ## Credits
-
 * contributors
-  - DayatXD
-  - the-noob-coder69
-
-* maintainers of plugins used by nvimfy
+  - [DayatXD](https://github.com/DayatXD)
+* collaborators
+  - [the-noob-coder69](https://github.com/the-noob-coder69)
+* plugins
 * awesomevim
 * neovimcraft
 
 ## Inspiration
-
 - [Doom-Nvim](https://github.com/NTBBloodbath/doom-nvim)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [Nvchad](https://github.com/NvChad/NvChad)
 
-## You may also like...
-
-- [Termify](https://github.com/AyeSpacey/Termify)  - EyeCandy For your Shell
-
 ## Support
 #### Contributions, issues, and feature requests are welcome!
-Give a ⭐️ if you like this project!t
+#### Give a ⭐️ if you like this project!
+
+## You may also like...
+- [Termify](https://github.com/AyeSpacey/Termify)  - EyeCandy For your Shell

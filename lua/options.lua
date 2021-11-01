@@ -18,7 +18,7 @@ g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 cmd([[colorscheme tokyonight]])
 
-g.mapleader = ','
+g.mapleader = '<Space>'
 
 opt.termguicolors = true
 opt.background = 'dark'
@@ -76,8 +76,7 @@ opt.list = true
 opt.listchars = {tab = '▸ ', trail = '·'}
 opt.formatoptions = opt.formatoptions - 'cro'
 opt.hidden = true
-opt.timeoutlen = 10
-opt.autochdir = false
+opt.timeoutlen = 1000
 
 --Backups
 opt.backup = false

@@ -27,6 +27,24 @@ map('', '<Del>', '"_x')
 map('n', ';', ':')
 map('v', ';', ':')
 
+-- Use TAB to cycle buffers
+map('n', '<TAB>', ':bnext<CR>')
+map('n', '<S-TAB>', ':bprevious<CR>')
+
+-- Run PackerSync
+map("n", "<leader>ps", [[<Cmd>PackerSync<CR>]],{silent=true})
+
+-- Undo breakpoints
+-- map('i', ',', ',<c-q>u')
+-- map('i', '.', '.<c-q>u')
+-- map('i', '!', '!<c-q>u')
+-- map('i', '?', '?<c-q>u')
+
+-- Open
+map('n', '<leader>S', ':Startify<CR>') -- Startify
+map('n', '<leader>T', ':tabnew<CR>')   -- New tab
+
+
 --nnoremap qq :q!<CR>
 --vim.api.nvim_set_keymap('n', 'qq', ':q!<CR>', {noremap = true})
 --map('n', 'qq', ':q!<CR>')
@@ -35,7 +53,7 @@ map('v', ';', ':')
 -- Plugins Mappings
 ---------------------
 
-map('n', '<C-f>', ':Telescope find_files<CR>', {silent = true})
+map('n', '<leader>f', ':Telescope find_files<CR>', {silent = true})
 
 map('n', '<C-Right>', ':BufferLineCycleNext<CR>', {silent = true})
 map('n', '<C-Left>', ':BufferLineCyclePrev<CR>', {silent = true})

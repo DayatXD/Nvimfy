@@ -15,25 +15,28 @@ local function setup()
 	local definitions = {
 
 		onload = {
-
 			{ 'VimResized', '*', 'wincmd =' },
 		},
-
     onwrite = {
-
 			{ 'BufWritePost', '~/.config/nvim/*.{vim,lua}', 'so $MYVIMRC' },
       { 'FocusGained,BufEnter', '*', ':checktime' }
-
     },
-
+    restore_cursor = {
+        { 'BufRead', '*', [[call setpos(".", getpos("'\""))]] }
+    },
+    
 }
 nvim_create_augroups(definitions)
 end
 setup()
 
-		--[[ insert = {
-            --TURN OFF RELATIVE LINE NUMBERING WHEN WE ENTER INSERT MODE AND ENABLE OTHERWISE
-            {"InsertEnter", "*", ":set norelativenumber"},
-            {"InsertLeave", "*", ":set relativenumber"}
-        }, ]]
+-- EXAMPLES
+
+--insert = {  --TURN OFF RELATIVE LINE NUMBERING WHEN WE ENTER INSERT MODE AND ENABLE OTHERWISE
+--      { "InsertEnter", "*", ":set norelativenumber"},
+--      { "InsertLeave", "*", ":set relativenumber"}
+--        }
+--onhold = {
+--     { 'CursorHoldI', '*', 'stopinsert'}
+--    }
 
