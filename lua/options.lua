@@ -18,7 +18,8 @@ g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 cmd([[colorscheme tokyonight]])
 
-g.mapleader = '<Space>'
+--g.mapleader = ','
+cmd([[let g:mapleader = ',']])
 
 opt.termguicolors = true
 opt.background = 'dark'
@@ -41,11 +42,12 @@ opt.errorbells = false
 opt.cmdheight = 1
 opt.wildmenu = true
 opt.laststatus = 2
-opt.completeopt = {'menuone','longest'}
-opt.pumheight = 15
 opt.shortmess = opt.shortmess + 'c'
 opt.statusline = "%f %m %w %= %l:%c"
-
+opt.completeopt = {'menuone','longest'}
+opt.pumheight = 15
+opt.pumblend = 20
+opt.winblend = 20
 
 --Term
 opt.splitbelow = true

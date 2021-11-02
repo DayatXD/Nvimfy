@@ -1,5 +1,6 @@
 require('plugins.ui.startify')
 require('plugins.ui.menu')
+require('plugins.ui.tree')
 
 local cmd = vim.cmd
 local g = vim.g

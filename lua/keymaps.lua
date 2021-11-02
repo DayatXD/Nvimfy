@@ -5,14 +5,52 @@ local function map(mode, lhs, rhs, opts)
 end
 
 local cmd = vim.cmd
+local silent = {silent=true}
+
 
 ---------------------
 -- Mappings Goes Here
 ---------------------
 
+map('n', '<leader>f', ':Telescope find_files<CR>', silent)
+map('n', '<leader>l', ':IndentBlanklineToggle<CR>', silent)
+map('', '<space>c', ':call quickmenu#toggle(0)<CR>', silent)
+
+map('n', '<C-Right>', ':BufferLineCycleNext<CR>', silent)
+map('n', '<C-Left>', ':BufferLineCyclePrev<CR>', silent)
+
+-- Open
+map('n', '<leader>S', ':Startify<CR>')
+map('n', '<leader>T', ':tabnew<CR>')
+map('', '<leader>t', ':ToggleTerm<CR>', silent)
+
 -- Save And Exit
 map('n', '<C-s>', ':w<CR>')
 map('n', '<C-q>', ':wq<CR>')
+--map('n', 'qq', ':q!<CR>')
+
+-- Undo
+map('i', '<C-z>', '<Esc>ua')
+
+-- map ; to :
+map('n', ';', ':')
+map('v', ';', ':')
+
+-- TAB to cycle buffers
+map('n', '<TAB>', ':bnext<CR>')
+map('n', '<S-TAB>', ':bprevious<CR>')
+
+-- Duplicate line up/down
+map('n', '<C-M-j>', [["dY"dp]])
+map('n', '<C-M-k>', [["dY"dP]])
+
+-- PackerSync
+map("n", "<leader>ps", [[<Cmd>PackerSync<CR>]],{silent=true})
+
+
+--------------------
+-- Defaults
+--------------------
 
 -- Do Not Insert In New Line
 map('n', 'o', 'o<esc>')
@@ -23,54 +61,15 @@ map('', 'x', '"_x')
 map('', 'X', '"_x')
 map('', '<Del>', '"_x')
 
--- map ; to :
-map('n', ';', ':')
-map('v', ';', ':')
+--Undo breakpoints
+--map('i', ',', ',<c-q>u')
+--map('i', '.', '.<c-q>u')
+--map('i', '!', '!<c-q>u')
+--map('i', '?', '?<c-q>u')
 
--- Use TAB to cycle buffers
-map('n', '<TAB>', ':bnext<CR>')
-map('n', '<S-TAB>', ':bprevious<CR>')
+--map('n', 'o', 'o<Esc>^Da<Esc>')
+--map('n', 'O', 'O<Esc>^Da<Esc>')
 
--- Run PackerSync
-map("n", "<leader>ps", [[<Cmd>PackerSync<CR>]],{silent=true})
-
--- Undo breakpoints
--- map('i', ',', ',<c-q>u')
--- map('i', '.', '.<c-q>u')
--- map('i', '!', '!<c-q>u')
--- map('i', '?', '?<c-q>u')
-
--- Open
-map('n', '<leader>S', ':Startify<CR>') -- Startify
-map('n', '<leader>T', ':tabnew<CR>')   -- New tab
-
-
---nnoremap qq :q!<CR>
---vim.api.nvim_set_keymap('n', 'qq', ':q!<CR>', {noremap = true})
---map('n', 'qq', ':q!<CR>')
-
----------------------
--- Plugins Mappings
----------------------
-
-map('n', '<leader>f', ':Telescope find_files<CR>', {silent = true})
-
-map('n', '<C-Right>', ':BufferLineCycleNext<CR>', {silent = true})
-map('n', '<C-Left>', ':BufferLineCyclePrev<CR>', {silent = true})
-
-map('n', '<C-a>', ':IndentBlanklineToggle<CR>', {silent = true})
-
-map('', '<C-c>', ':call quickmenu#toggle(0)<CR>', {silent = true})
-
--- Telescope
---nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
---nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
---nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
---nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
----------------------
--- Improvements
----------------------
 
 -- Yanks all Lines
 vim.api.nvim_set_keymap('n', '<C-a>', ':%y<CR>', {noremap = false, silent=true})
@@ -78,12 +77,17 @@ vim.api.nvim_set_keymap('n', '<C-a>', ':%y<CR>', {noremap = false, silent=true})
 -- Disables Recording Macros
 vim.api.nvim_set_keymap('', 'q', '<Nop>', {noremap = false})
 
+-- Some Smoothie
+vim.api.nvim_set_keymap('', 'ScrollWheelUp', '<C-U>', {noremap = false})
+vim.api.nvim_set_keymap('', 'ScrollWheelDown', '<C-D>', {noremap = false})
+
 -- Do not Go Below the Line
 vim.api.nvim_set_keymap('', '<PageUp>', '1000<C-U>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('', '<PageDown>', '1000<C-D>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('i', '<PageUp>', '<C-O>1000<C-U>', {noremap = false, silent = true})
 vim.api.nvim_set_keymap('i', '<PageDown>', '<C-O>1000<C-D>', {noremap = false, silent = true})
 
+-- Window Navigations
 --vim.api.nvim_set_keymap('n', '<up>', '<C-w><up>', {noremap = false})
 --vim.api.nvim_set_keymap('n', '<down>', '<C-w><down>', {noremap = false})
 --vim.api.nvim_set_keymap('n', '<left>', '<C-w><left>', {noremap = false})

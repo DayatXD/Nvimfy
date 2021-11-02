@@ -28,10 +28,7 @@ return require('packer').startup(function(use)
     use 'matze/vim-move'
     use 'godlygeek/tabular'
     use 'numToStr/Comment.nvim'
-    use {
-        'Pocco81/AutoSave.nvim',
-        disable=true
-    }
+    use 'Pocco81/AutoSave.nvim'
 
 --           Syntax
     use {
@@ -73,6 +70,9 @@ return require('packer').startup(function(use)
 --            Tools
     use 'skywind3000/quickmenu.vim'
     use 'akinsho/toggleterm.nvim'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
 
 --            Pairs
     use 'windwp/nvim-autopairs'
@@ -81,8 +81,6 @@ return require('packer').startup(function(use)
 
 
 --          Telescope
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
 
 
 --            LSP
