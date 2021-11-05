@@ -1,11 +1,39 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
+local g = vim.g
+
+g.nvim_tree_quit_on_open = 1
+g.nvim_tree_indent_markers = 1
+g.nvim_tree_highlight_opened_files = 1
+
+g.nvim_tree_icons = {
+  default = '',
+  symlink = '',
+  git = {
+    unstaged = "✗",
+    staged = "✓",
+    unmerged = "",
+    renamed = "➜",
+    untracked = "★",
+    deleted = "",
+    ignored = "◌"
+    },
+  folder = {
+    arrow_open = "",
+    arrow_closed = "",
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+    symlink_open = "",
+    }
+}
+
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
+  auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -47,4 +75,3 @@ require'nvim-tree'.setup {
     }
   }
 }
-

@@ -4,22 +4,21 @@
 -- | |   | | | | | |    (_   __) | | | --
 -- | |   | |\ V /| | | | || |  | |_| | --
 -- |_|   |_| \_/ |_|_|_|_||_|   \__  | --
---                             (____/  --
+--
 
 -- Speed Up Neovim
 require('utils.disabled')
 
--- Load Settings
-require("plugins")
+-- Load Configurations
+require('plugins')
 require('options')
-require('utils.au')
 require('keymaps')
-require('plugins.core')
+require('config.core')
 
--- Custom User Settings
-require('custom.user')
+-- User Settings
+--require('user')
 
---------------------Written With <3 by ¬
--- AyeSpacey
--- DayatXD
+-- Wriiten With :Love by
+-- ayespacey
+-- dayatXD
 -- the-noob-coder69

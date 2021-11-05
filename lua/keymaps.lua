@@ -1,3 +1,4 @@
+-- map helper
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
   if opts then options = vim.tbl_extend('force', options, opts) end
@@ -5,97 +6,109 @@ local function map(mode, lhs, rhs, opts)
 end
 
 local cmd = vim.cmd
-local silent = {silent=true}
+local s = {silent = true}
+------------------------
+-- Mapping Goes Here --
+------------------------
+
+map('n', '<Space>', '<Nop>')
+vim.g.mapleader = ' '
 
 
----------------------
--- Mappings Goes Here
----------------------
+map('n', '<leader>s', ':Dashboard<cr>', s)
+map('n', '<leader>n', ':tabnew<cr>', s)
+map('n', '<leader>t', ':ToggleTerm<cr>', s)
 
-map('n', '<leader>f', ':Telescope find_files<CR>', silent)
-map('n', '<leader>l', ':IndentBlanklineToggle<CR>', silent)
-map('', '<space>c', ':call quickmenu#toggle(0)<CR>', silent)
 
-map('n', '<C-Right>', ':BufferLineCycleNext<CR>', silent)
-map('n', '<C-Left>', ':BufferLineCyclePrev<CR>', silent)
+map('n', '<leader>f', ':Telescope find_files<cr>', s)
+map('n', '<leader>l', ':IndentBlanklineToggle<cr>', s)
+map('', '<space>c', ':quickmenu#toggle(0)<cr>', s)
+map('n', '<C-right>', ':BufferLineCycleNext<cr>', s)
+map('n', '<C-left>', ':BufferLineCyclePrev<cr>', s)
 
--- Open
-map('n', '<leader>S', ':Startify<CR>')
-map('n', '<leader>T', ':tabnew<CR>')
-map('', '<leader>t', ':ToggleTerm<CR>', silent)
 
--- Save And Exit
-map('n', '<C-s>', ':w<CR>')
-map('n', '<C-q>', ':wq<CR>')
---map('n', 'qq', ':q!<CR>')
+map('n', '<C-c>', ':NvimTreeToggle<cr>', s)
+map('n', '<leader>nf', ':NvimTreeFindFile<cr>', s)
 
--- Undo
-map('i', '<C-z>', '<Esc>ua')
 
--- map ; to :
+map('n', '<leader>n', ':DashboardNewFile<cr>', s)
+map('n', '<leader>i', ':e ~/.config/nvim/lua/options.lua<cr>', s)
+
+
+-- Save, Exit
+map('n', '<C-s>', ':w<cr>')
+map('n', '<C-q>', ':wq<cr>')
+map('n', 'qq', ':q!<cr>')
+
+map('n', '<C-z>', '<esc>ua')
+
+-- Map ; to :
 map('n', ';', ':')
-map('v', ';', ':')
+map('n', ';', ':')
 
--- TAB to cycle buffers
-map('n', '<TAB>', ':bnext<CR>')
-map('n', '<S-TAB>', ':bprevious<CR>')
+-- Tab cycles Buffer
+map('n', '<tab>', ':bnext<cr>', s)
+map('v', '<s-tab>', ':bprevious<cr>', s)
 
--- Duplicate line up/down
-map('n', '<C-M-j>', [["dY"dp]])
-map('n', '<C-M-k>', [["dY"dP]])
+-- Run Packer Sync
+map('n', '<leader>ps', ':PackerSync<cr>', s)
 
--- PackerSync
-map("n", "<leader>ps", [[<Cmd>PackerSync<CR>]],{silent=true})
+-- Don't Insert in newline
+map('n', 'o', 'o<esc>', s)
+map('n', 'O', 'O<esc>', s)
 
+-- Prevent x from overriding Paste
+map('', 'x', '"_x', s)
+map('', 'X', '"_x', s)
+map('', '<del>', '"_x', s)
 
---------------------
--- Defaults
---------------------
-
--- Do Not Insert In New Line
-map('n', 'o', 'o<esc>')
-map('n', 'O', 'O<esc>')
-
--- Prevent x From Overiding Paste
-map('', 'x', '"_x')
-map('', 'X', '"_x')
-map('', '<Del>', '"_x')
-
---Undo breakpoints
+-- Undo BreakPoints
 --map('i', ',', ',<c-q>u')
 --map('i', '.', '.<c-q>u')
 --map('i', '!', '!<c-q>u')
 --map('i', '?', '?<c-q>u')
 
---map('n', 'o', 'o<Esc>^Da<Esc>')
---map('n', 'O', 'O<Esc>^Da<Esc>')
+-- Duplicate Line up/down
+map('n', '<C-m-j>', '"dY"dp')
+map('n', '<C-m-k>', '"dY"dP')
 
 
--- Yanks all Lines
-vim.api.nvim_set_keymap('n', '<C-a>', ':%y<CR>', {noremap = false, silent=true})
 
--- Disables Recording Macros
-vim.api.nvim_set_keymap('', 'q', '<Nop>', {noremap = false})
+------------------------
+--   Some Defaults   --
+------------------------
 
--- Some Smoothie
-vim.api.nvim_set_keymap('', 'ScrollWheelUp', '<C-U>', {noremap = false})
-vim.api.nvim_set_keymap('', 'ScrollWheelDown', '<C-D>', {noremap = false})
+local place = vim.api.nvim_set_keymap
+local sn = {noremap = false, silent = true}
 
--- Do not Go Below the Line
-vim.api.nvim_set_keymap('', '<PageUp>', '1000<C-U>', {noremap = false, silent = true})
-vim.api.nvim_set_keymap('', '<PageDown>', '1000<C-D>', {noremap = false, silent = true})
-vim.api.nvim_set_keymap('i', '<PageUp>', '<C-O>1000<C-U>', {noremap = false, silent = true})
-vim.api.nvim_set_keymap('i', '<PageDown>', '<C-O>1000<C-D>', {noremap = false, silent = true})
+-- Sellect all text
+place('n', '<C-x>', ':%y<cr>', sn)
 
--- Window Navigations
---vim.api.nvim_set_keymap('n', '<up>', '<C-w><up>', {noremap = false})
---vim.api.nvim_set_keymap('n', '<down>', '<C-w><down>', {noremap = false})
---vim.api.nvim_set_keymap('n', '<left>', '<C-w><left>', {noremap = false})
---vim.api.nvim_set_keymap('n', '<right>', '<C-w><right>', {noremap = false})
+-- disable macros
+place('', 'q', '<Nop>', sn)
 
--- Better Completion
--- inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
--- inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
--- inoremap <expr> <Right> pumvisible() ? "<C-y>" :  "<Right>"
--- inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
--- inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"
+-- smoothie
+place('', 'ScrollWheelUp', '<C-u>', sn)
+place('', 'ScrollWheelDown', '<C-d>', sn)
+
+-- don't go below the line
+place('', '<PageUp>', '1000<C-u>', sn)
+place('', '<PageDown>', '1000<C-d>', sn)
+place('i', '<PageUp>', '<C-o>1000<C-u>', sn)
+place('i', '<PageDown>', '<C-o>1000<C-d>', sn)
+
+-- Window Navigation
+--place('n', '<up>', '<C-w><up>', sn)
+--place('n', '<down>', '<C-w><down>', sn)
+--place('n', '<left>', '<C-w><left>', sn)
+--place('n', '<right>', '<C-w><right>', sn)
+
+-- Better Complete
+--" Navigate the complete menu items like CTRL+n / CTRL+p would.
+--inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
+--inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+--" Select the complete menu item like CTRL+y would.
+--inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
+--inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>
+--" Cancel the complete menu item like CTRL+e would.
+--inoremap <expr> <Left> pumvisible() ? "<C-e>" : "<Left>"

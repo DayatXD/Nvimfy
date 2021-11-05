@@ -1,107 +1,100 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+require('packer').init({
+  compile_path = '~/.local/share/nvim/plugin/packer_compiled.lua',
+  display = {
+    non_interactive = false,
+    open_fn  = require('packer.util').float,
+    show_all_info = false,
+    prompt_border = 'single',
+  },
 
+})
 return require('packer').startup(function(use)
 
-    -- Packer managing itself
-    use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
---         Color Schemes
-    use 'folke/tokyonight.nvim'
-    use 'olimorris/onedarkpro.nvim'
-    use 'Mangeshrex/uwu.vim'
-    use 'wadackel/vim-dogrun'
-    use 'Avimitin/neovim-deus'
-    use 'xiyaowong/nvim-transparent'
+  --color
+  use 'folke/tokyonight.nvim'
+  use 'whatyouhide/vim-gotham'
 
---              UI
-    use 'mhinz/vim-startify'
-    use 'beauwilliams/statusline.lua'
-    use 'akinsho/bufferline.nvim'
+  --ui
+  use 'glepnir/dashboard-nvim'
+  use 'akinsho/bufferline.nvim'
+  use 'glepnir/galaxyline.nvim'
 
---           Editing
-    use 'mg979/vim-visual-multi'
-    use 'matze/vim-move'
-    use 'godlygeek/tabular'
-    use 'numToStr/Comment.nvim'
-    use 'Pocco81/AutoSave.nvim'
+  --tools
+  use 'kyazdani42/nvim-tree.lua'
+  use 'akinsho/toggleterm.nvim'
+  use { 'skywind3000/quickmenu.vim', opt = true }
+  use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'},{'kyazdani42/nvim-web-devicons'}} }
 
---           Syntax
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use {
-        'othree/html5.vim',
-        ft = {
-            'html',
-            'html5'
+  --syntax
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'plasticboy/vim-markdown', opt = true, ft = {'markdown'} }
+
+  --git
+  use 'lewis6991/gitsigns.nvim'
+
+  --workspace
+  use 'terrortylor/nvim-comment'
+  use 'Pocco81/AutoSave.nvim'
+  use 'folke/todo-comments.nvim'
+
+  --edit
+  use 'matze/vim-move'
+  use 'mg979/vim-visual-multi'
+
+  --enhance/optional
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'p00f/nvim-ts-rainbow'
+  use 'karb94/neoscroll.nvim'
+
+  --auto
+  use 'windwp/nvim-autopairs'
+  use { 'windwp/nvim-ts-autotag', ft = {'html'} }
+  use { 'AndrewRadev/tagalong.vim', ft = {'html'} }
+
+  --lsp
+  use 'neovim/nvim-lspconfig'
+  use 'onsails/lspkind-nvim'
+  use 'williamboman/nvim-lsp-installer'
+
+  --snip
+  use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
+
+  --completion
+  use { 'hrsh7th/nvim-cmp',
+        requires = {
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'hrsh7th/cmp-path'},
+          {'hrsh7th/cmp-buffer'},
+          {'hrsh7th/cmp-vsnip'},
         }
-    }
-    use {
-        'hail2u/vim-css3-syntax',
-        ft = {
-            'css'
-        }
-    }
-    use {
-        'plasticboy/vim-markdown',
-        ft = {
-            'markdown'
-        }
-    }
-
---        Enhancements
-    use 'psliwka/vim-smoothie'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'yamatsum/nvim-cursorline'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'p00f/nvim-ts-rainbow'
-    use 'kyazdani42/nvim-web-devicons'
-
---             Git
-    use 'lewis6991/gitsigns.nvim'
-    use 'tpope/vim-fugitive'
-
---            Tools
-    use 'skywind3000/quickmenu.vim'
-    use 'akinsho/toggleterm.nvim'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-
---            Pairs
-    use 'windwp/nvim-autopairs'
-    use 'AndrewRadev/tagalong.vim'
-    use 'windwp/nvim-ts-autotag'
-
-
---          Telescope
-
-
---            LSP
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    use 'onsails/lspkind-nvim'
-
---    Snippets
-    use 'L3MON4D3/LuaSnip'
-    use 'rafamadriz/friendly-snippets'
-
---    Completion
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-calc'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'octaltree/cmp-look'
-    use 'ray-x/cmp-treesitter'
-    use 'f3fora/cmp-spell'
+      }
 
 end
 )
+
+-- Suggested Plugins
+-- lspsaga.nvim
+-- trouble.nvim
+-- lsp-colors.nvim
+-- formatter.nvim
+
+-- rest.nvim
+-- nvim-jqx
+
+-- auto-session
+-- sidebar.nvim
+-- nvim-gps
+-- TrueZen
+-- twilight.nvim
+-- nvim-spectre
+
+-- octo.nvim
+
+-- sneak
+-- mathup
+-- register
+-- vCoolor
