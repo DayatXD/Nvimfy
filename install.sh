@@ -70,9 +70,9 @@ if [[ $opt = 'y' ]]; then
   echo "Launching Neovim-(Nvimfied) !"
   sleep 1
 
-  else
-    echo "👋 Bye Bye !"
-    sleep 1
-    exit
+else
+  echo "👋 Bye Bye !"
+  sleep 1
+  exit
 fi
 nvim +PackerSync
