@@ -68,7 +68,6 @@
 * Native Speed
 
 ----
-- Plugins :
  * Find files using Telescopes
  * Advanced Utility using Telescopes
  * Quick access Commands Using Quickmenu                ( Space + c )
@@ -80,7 +79,7 @@
 
 ## Install
 ```bash
-curl https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh | bash
+wget https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh && bash install.sh
 ```
 
 - Installing Language support
