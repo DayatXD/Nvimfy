@@ -27,7 +27,10 @@ mk_backup() {
 }
 
 git_clone() {
+  echo "Cloning Packer ...."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+  nvimfy
+  echo "Cloning Nvimfy ...."
   git clone --depth 1 https://github.com/AyeSpacey/Nvimfy $HOME/.config/nvim
   nvimfy
 }
@@ -66,6 +69,7 @@ if [[ $opt = 'y' ]]; then
   echo ""
   echo "Launching Neovim-(Nvimfied) !"
   sleep 1
+
 else
   echo "👋 Bye Bye !"
   sleep 1
