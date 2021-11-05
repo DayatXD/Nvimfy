@@ -1,8 +1,6 @@
 local cmd = vim.cmd
 local opt = vim.opt
 
--- cmd([[let g:mapleader = ',']])
-
 require('config.ui.colors')
 cmd('colorscheme tokyonight')
 
@@ -59,7 +57,5 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 opt.undofile = true
-
-cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup = 'search', timeout = 2000})]])
 
 require('utils.autocmds')

@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
 
   --color
   use 'folke/tokyonight.nvim'
-  use 'whatyouhide/vim-gotham'
 
   --ui
   use 'glepnir/dashboard-nvim'
