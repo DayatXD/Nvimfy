@@ -23,6 +23,7 @@ mk_backup() {
       mv -f $CONF $OLD_CONF
       echo "moved your config to $OLD_CONF"
   fi
+  nvimfy
 }
 
 git_clone() {
@@ -50,6 +51,7 @@ add_colorscheme() {
   else
     echo "Okay !"
   fi
+  nvimfy
 }
 
 nvimfy
@@ -59,18 +61,14 @@ if [[ $opt = 'y' ]]; then
   mk_backup
   git_clone
   add_colorscheme
-  nvimfy
   echo "Wait for the plugins to be installed,"
   echo "then Reload Neovim..."
   echo ""
   echo "Launching Neovim-(Nvimfied) !"
   sleep 1
-
-  nvim +PackerSync
-  echo "Reload Neovim"
-
 else
   echo "👋 Bye Bye !"
   sleep 1
   exit
 fi
+nvim +PackerSync
