@@ -79,7 +79,7 @@
 
 ## Install
 ```bash
-wget https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh && bash install.sh
+[[ -f install.sh ]] && mv install.sh install.sh.old.$(date +'%Y-%m-%d_%R') ; wget https://raw.githubusercontent.com/AyeSpacey/Nvimfy/main/install.sh && chmod +x install.sh && ./install.sh
 ```
 
 - Installing Language support
