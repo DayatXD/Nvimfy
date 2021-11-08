@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
   --tools
   use 'kyazdani42/nvim-tree.lua'
   use 'akinsho/toggleterm.nvim'
-  use { 'skywind3000/quickmenu.vim', opt = true }
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'},{'kyazdani42/nvim-web-devicons'}} }
 
   --syntax
@@ -34,8 +33,8 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   --workspace
-  use 'terrortylor/nvim-comment'
   use 'Pocco81/AutoSave.nvim'
+  use 'terrortylor/nvim-comment'
   use 'folke/todo-comments.nvim'
 
   --edit
