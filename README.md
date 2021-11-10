@@ -24,7 +24,7 @@
 
 ## Showcase
 
-<details><summary><b>(Click to expand!)</b></summary>
+<details><summary><b>Click to Expand</b></summary>
 
 ----
 
@@ -40,7 +40,7 @@
 
 </details>
 <br>
-<details><summary><b>( Termux - expand)</b></summary>
+<details><summary><b>Termux</b></summary>
 
 ----
 
