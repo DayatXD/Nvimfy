@@ -48,7 +48,10 @@ add_colorscheme() {
   if [[ $opt = 'y' ]]; then
 
     git clone --depth 1 https://github.com/wadackel/vim-dogrun $INSTALL_PATH/dogrun
-    git clone --depth 1 https://github.com/xiyaowong/nvim-transparent $INSTALL_PATH/nvim-transparent
+    git clone --depth 1 https://github.com/arcticicestudio/nord-vim $INSTALL_PATH/nord
+    git clone --depth 1 https://github.com/mhartington/oceanic-next $INSTALL_PATH/oceanic-next
+    git clone --depth 1 https://github.com/ful1e5/onedark.nvim $INSTALL_PATH/onedark
+    git clone --depth 1 https://github.com/srcery-colors/srcery-vim $INSTALL_PATH/srcery-vim
 
   echo "Done !"
   fi
