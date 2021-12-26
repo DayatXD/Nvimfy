@@ -80,7 +80,7 @@
 
 ## Credits
 [DayatXD](https://github.com/DayatXD) for structuring the nvimfy directories.
-[the-noob-coder69](https://github.com/the-noob-coder69) for helping me out everytime i ran into problems.
+[the-noob-coder69](https://github.com/the-noob-coder69) for helping me out.
 
 ## Inspiration
 and i was greatly inspired by these:
