@@ -16,6 +16,16 @@ require('config.tools.todo')
 require('config.lsp')
 
 -- Misc
+
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
+require("trouble").setup()
+
+
 require('colorizer').setup()
 require('nvim_comment').setup()
 
@@ -47,7 +57,6 @@ require("indent_blankline").setup {
   space_char_blankline = " ",
   show_current_context = true,
 }
-
 
 local g = vim.g
 

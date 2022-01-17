@@ -15,10 +15,5 @@ require('options')
 require('keymaps')
 require('config.core')
 
--- User Settings
---require('user')
-
 -- Wriiten With :Love by
 -- ayespacey
--- dayatXD
--- the-noob-coder69

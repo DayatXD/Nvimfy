@@ -24,7 +24,7 @@ local function mode_alias(m)
     c = ' C',
     R = ' R',
     t = ' T',
-    [''] = ' V-B',
+    [''] = ' V-B',
     V = ' V-L',
     v = ' V',
   }
@@ -46,7 +46,7 @@ local function mode_color(m)
     c = mode_colors.replace,
     R = mode_colors.replace,
     t = mode_colors.insert,
-    [''] = mode_colors.visual,
+    [''] = mode_colors.visual,
     V = mode_colors.visual,
     v = mode_colors.visual,
   }

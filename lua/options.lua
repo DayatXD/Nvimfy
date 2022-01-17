@@ -1,8 +1,7 @@
 local cmd = vim.cmd
 local opt = vim.opt
 
-require('config.ui.colors')
-cmd('colorscheme tokyonight')
+cmd[[colorscheme ayu-mirage]]
 
 opt.termguicolors = true
 opt.background  = 'dark'
@@ -13,7 +12,7 @@ opt.cursorline  = true
 opt.ruler  = true
 opt.wrap = false
 opt.mouse  = 'nv'
-opt.scrolloff  = 6
+opt.scrolloff  = 4
 opt.sidescrolloff  = 6
 opt.laststatus = 2
 opt.hidden = true
@@ -28,9 +27,9 @@ opt.cmdheight  = 1
 opt.timeoutlen = 200
 opt.shortmess = opt.shortmess + 'c'
 opt.completeopt = {'menuone', 'longest'}
-opt.pumheight = 14
-opt.pumblend = 20
-opt.winblend = 20
+opt.pumheight = 6
+opt.pumblend = 2
+opt.winblend = 2
 
 opt.clipboard = {'unnamed', 'unnamedplus'}
 
@@ -45,10 +44,9 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 0
 
-opt.foldenable = true
-opt.foldmethod = 'syntax'
+opt.foldenable = false
 
-opt.list = true
+opt.list = false
 opt.listchars = {tab = '> ', trail = '°'}
 
 opt.formatoptions = opt.formatoptions - 'cro'

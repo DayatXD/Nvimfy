@@ -14,6 +14,9 @@ return require('packer').startup(function(use)
 
   --color
   use 'folke/tokyonight.nvim'
+  use 'marko-cerovac/material.nvim'
+  use 'sainnhe/gruvbox-material'
+  use 'Shatur/neovim-ayu'
 
   --ui
   use 'glepnir/dashboard-nvim'
@@ -44,6 +47,7 @@ return require('packer').startup(function(use)
   --enhance/optional
   use 'lukas-reineke/indent-blankline.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'folke/lsp-colors.nvim'
   use 'p00f/nvim-ts-rainbow'
   use 'karb94/neoscroll.nvim'
 
@@ -55,7 +59,11 @@ return require('packer').startup(function(use)
   --lsp
   use 'neovim/nvim-lspconfig'
   use 'onsails/lspkind-nvim'
-  use 'williamboman/nvim-lsp-installer'
+  use 'folke/trouble.nvim'
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "jose-elias-alvarez/nvim-lsp-ts-utils"
+
+  --use 'williamboman/nvim-lsp-installer'
 
   --snip
   use 'hrsh7th/vim-vsnip'

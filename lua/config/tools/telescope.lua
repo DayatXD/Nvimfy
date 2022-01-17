@@ -11,4 +11,3 @@ require('telescope').setup({
   },
 
 })
-

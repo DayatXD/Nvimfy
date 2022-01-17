@@ -7,6 +7,8 @@ end
 
 local cmd = vim.cmd
 local s = {silent = true}
+
+
 ------------------------
 -- Mapping Goes Here --
 ------------------------
@@ -40,7 +42,8 @@ map('n', '<C-s>', ':w<cr>')
 map('n', '<C-q>', ':wq<cr>')
 map('n', 'qq', ':q!<cr>')
 
-map('n', '<C-z>', '<esc>ua')
+map('n', '<C-z>', '<esc>ua<esc>')
+map('n', '<z>', '<esc>ua<esc>')
 
 -- Map ; to :
 map('n', ';', ':')
@@ -51,7 +54,7 @@ map('n', '<tab>', ':bnext<cr>', s)
 map('v', '<s-tab>', ':bprevious<cr>', s)
 
 -- Run Packer Sync
-map('n', '<leader>ps', ':PackerSync<cr>', s)
+map('n', '<leader>cs', ':PackerSync<cr>', s)
 
 -- Don't Insert in newline
 map('n', 'o', 'o<esc>', s)
@@ -96,6 +99,8 @@ place('', '<PageUp>', '1000<C-u>', sn)
 place('', '<PageDown>', '1000<C-d>', sn)
 place('i', '<PageUp>', '<C-o>1000<C-u>', sn)
 place('i', '<PageDown>', '<C-o>1000<C-d>', sn)
+
+--__Unused__--
 
 -- Window Navigation
 --place('n', '<up>', '<C-w><up>', sn)
